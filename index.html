@@ -1,14 +1,20 @@
 <!DOCTYPE html>
-<html lang="bn">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sabu ❤️</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
 
-html{scroll-behavior:smooth}
+html{
+    scroll-behavior:smooth;
+}
 
 body{
     font-family:Georgia,"Times New Roman",serif;
@@ -25,20 +31,26 @@ body{
     overflow:hidden;
 }
 
-.page.active{display:flex}
+.page.active{
+    display:flex;
+}
 
-/* ================= PAGE 1 ================= */
+/* =========================
+   PAGE 1
+========================= */
 
 #page1{
     align-items:center;
     justify-content:center;
     text-align:center;
     background:
-    radial-gradient(circle at 50% 30%,rgba(255,105,180,.28),transparent 35%),
-    linear-gradient(135deg,#100812,#260d25,#090912);
+        radial-gradient(circle at 50% 30%,rgba(255,105,180,.28),transparent 35%),
+        linear-gradient(135deg,#100812,#260d25,#090912);
 }
 
-.intro{padding:30px}
+.intro{
+    padding:30px;
+}
 
 .intro h1{
     font-size:clamp(28px,8vw,58px);
@@ -52,13 +64,11 @@ body{
     opacity:.8;
 }
 
-/* ================= BUTTON ================= */
-
 .open-btn,
 .next-btn{
     border:0;
     padding:15px 38px;
-    margin-top:30px;
+    margin-top:35px;
     border-radius:50px;
     background:linear-gradient(135deg,#ff5c9a,#ff86b7);
     color:white;
@@ -79,16 +89,18 @@ body{
     transform:scale(.96);
 }
 
-/* ================= PAGE 3 ================= */
+/* =========================
+   PAGE 3
+========================= */
 
 #page3{
     align-items:center;
     justify-content:center;
     text-align:center;
     background:
-    radial-gradient(circle at 50% 25%,rgba(255,170,205,.42),transparent 28%),
-    radial-gradient(circle at 20% 80%,rgba(180,80,150,.3),transparent 30%),
-    linear-gradient(135deg,#180817,#481633,#16091d);
+        radial-gradient(circle at 50% 25%,rgba(255,170,205,.42),transparent 28%),
+        radial-gradient(circle at 20% 80%,rgba(180,80,150,.3),transparent 30%),
+        linear-gradient(135deg,#180817,#481633,#16091d);
 }
 
 #page3::before{
@@ -96,10 +108,10 @@ body{
     position:absolute;
     inset:0;
     background:
-    radial-gradient(circle at 10% 20%,rgba(255,255,255,.7) 0 2px,transparent 3px),
-    radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 2px,transparent 3px),
-    radial-gradient(circle at 60% 80%,rgba(255,255,255,.5) 0 2px,transparent 3px),
-    radial-gradient(circle at 30% 65%,rgba(255,255,255,.5) 0 2px,transparent 3px);
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.7) 0 2px,transparent 3px),
+        radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 2px,transparent 3px),
+        radial-gradient(circle at 60% 80%,rgba(255,255,255,.5) 0 2px,transparent 3px),
+        radial-gradient(circle at 30% 65%,rgba(255,255,255,.5) 0 2px,transparent 3px);
     background-size:220px 220px;
     animation:stars 8s linear infinite;
     pointer-events:none;
@@ -144,21 +156,29 @@ body{
     text-shadow:0 0 18px rgba(255,160,200,.55);
 }
 
-.hidden-animation{display:none}
+.hidden-animation{
+    display:none;
+}
 
-.fade-animation{animation:fadeZoom 1s ease both}
+.fade-animation{
+    animation:fadeZoom 1s ease both;
+}
 
-.letter-animation{animation:letterAppear .7s ease both}
+.letter-animation{
+    animation:letterAppear .7s ease both;
+}
 
-/* ================= MEMORY PAGE ================= */
+/* =========================
+   MEMORY PAGE
+========================= */
 
 #memoryPage{
     display:none;
     min-height:100vh;
     padding:45px 18px 60px;
     background:
-    radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
-    linear-gradient(135deg,#100812,#271020,#0b0a13);
+        radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
+        linear-gradient(135deg,#100812,#271020,#0b0a13);
 }
 
 .memory-title{
@@ -217,14 +237,15 @@ body{
     cursor:pointer;
 }
 
-/* ================= DETAIL PAGE ================= */
+/* =========================
+   DETAIL PAGE
+========================= */
 
 .detail-page{
     display:none;
     min-height:100vh;
     padding:35px 20px 55px;
     position:relative;
-    transition:background 1s ease;
 }
 
 .detail-container{
@@ -236,7 +257,6 @@ body{
 .detail-title{
     font-size:clamp(27px,7vw,48px);
     margin-bottom:25px;
-    text-shadow:0 0 20px rgba(255,255,255,.3);
 }
 
 .detail-image{
@@ -254,87 +274,92 @@ body{
     text-align:left;
     font-size:18px;
     line-height:1.9;
-    color:#fff;
+    color:#fff7fb;
     white-space:pre-line;
-    animation:messageIn 1s ease;
 }
 
-.detail-buttons{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    gap:12px;
-    flex-wrap:wrap;
-    margin-top:25px;
-}
-
-.back-btn{
+.detail-next{
     border:0;
-    padding:13px 30px;
-    border-radius:40px;
-    background:rgba(255,255,255,.16);
-    color:white;
-    font-size:16px;
-    cursor:pointer;
-}
-
-.page5-open{
-    border:0;
-    padding:16px 45px;
+    padding:16px 40px;
     border-radius:50px;
-    background:linear-gradient(135deg,#ff4f93,#ff91bd);
     color:white;
-    font-size:20px;
+    font-size:19px;
     font-weight:bold;
     cursor:pointer;
-    box-shadow:0 0 28px rgba(255,80,150,.45);
+    box-shadow:0 0 28px rgba(255,100,170,.4);
+    margin-top:12px;
+    transition:.3s;
 }
 
-/* NEXT BUTTON */
-
-.next-btn{
-    margin-top:0;
-    padding:14px 35px;
+.detail-next:hover{
+    transform:scale(1.06);
 }
 
-/* ================= INDIVIDUAL BACKGROUNDS ================= */
+/* PHOTO 1 - SAME DARK ROMANTIC STYLE */
 
-.detail-page.photo1-bg{
+#detailPage.photo1-bg{
     background:
-    radial-gradient(circle at 50% 10%,rgba(255,120,180,.3),transparent 30%),
-    linear-gradient(135deg,#120812,#301226,#0b0911);
+        radial-gradient(circle at 50% 10%,rgba(255,120,180,.25),transparent 30%),
+        linear-gradient(135deg,#120812,#301226,#0b0911);
 }
 
-.detail-page.photo2-bg{
+/* PHOTO 2 - SOFT PINK */
+
+#detailPage.photo2-bg{
     background:
-    radial-gradient(circle at 20% 15%,rgba(255,190,220,.5),transparent 30%),
-    radial-gradient(circle at 80% 80%,rgba(220,170,255,.35),transparent 30%),
-    linear-gradient(135deg,#35152f,#7b456f,#24152e);
+        radial-gradient(circle at 20% 15%,rgba(255,255,255,.5),transparent 25%),
+        radial-gradient(circle at 85% 75%,rgba(255,120,180,.35),transparent 30%),
+        linear-gradient(135deg,#5b193b,#c65382,#f3a6bd);
 }
 
-.detail-page.photo3-bg{
+/* PHOTO 3 - LAVENDER */
+
+#detailPage.photo3-bg{
     background:
-    radial-gradient(circle at 70% 20%,rgba(255,210,230,.45),transparent 30%),
-    radial-gradient(circle at 20% 80%,rgba(190,170,255,.3),transparent 30%),
-    linear-gradient(135deg,#27152f,#5b426d,#171221);
+        radial-gradient(circle at 80% 15%,rgba(255,255,255,.45),transparent 25%),
+        radial-gradient(circle at 15% 80%,rgba(200,150,255,.35),transparent 30%),
+        linear-gradient(135deg,#29143f,#754d8f,#d6a8d5);
 }
 
-.detail-page.photo4-bg{
+/* PHOTO 4 - ROSE */
+
+#detailPage.photo4-bg{
     background:
-    radial-gradient(circle at 50% 15%,rgba(255,180,210,.5),transparent 28%),
-    radial-gradient(circle at 10% 85%,rgba(255,200,230,.25),transparent 30%),
-    linear-gradient(135deg,#42172f,#8c496d,#24101e);
+        radial-gradient(circle at 15% 20%,rgba(255,255,255,.5),transparent 25%),
+        radial-gradient(circle at 85% 80%,rgba(255,80,150,.35),transparent 30%),
+        linear-gradient(135deg,#4a102d,#a83262,#e98baa);
 }
 
-/* ================= PAGE 5 ================= */
+/* DIFFERENT BUTTON COLOURS */
+
+.photo1-button{
+    background:linear-gradient(135deg,#ff5c9a,#ff8dbb);
+}
+
+.photo2-button{
+    background:linear-gradient(135deg,#d94675,#f58cab);
+}
+
+.photo3-button{
+    background:linear-gradient(135deg,#8b5fc7,#b58ae0);
+}
+
+.photo4-button{
+    background:linear-gradient(135deg,#c62f68,#ed6e99);
+}
+
+/* =========================
+   PAGE 5
+========================= */
 
 #page5{
+    display:none;
     min-height:100vh;
     padding:45px 20px 70px;
     background:
-    radial-gradient(circle at 50% 15%,rgba(255,200,225,.45),transparent 30%),
-    radial-gradient(circle at 10% 80%,rgba(220,170,255,.3),transparent 30%),
-    linear-gradient(135deg,#35152f,#734766,#211326);
+        radial-gradient(circle at 50% 10%,rgba(255,220,235,.55),transparent 28%),
+        radial-gradient(circle at 15% 80%,rgba(255,150,190,.3),transparent 30%),
+        linear-gradient(135deg,#4c1935,#a64f77,#e7a5b8);
 }
 
 .final-container{
@@ -346,19 +371,19 @@ body{
     text-align:center;
     font-size:clamp(28px,7vw,50px);
     margin-bottom:35px;
-    text-shadow:0 0 20px rgba(255,200,220,.7);
+    text-shadow:0 0 20px rgba(255,255,255,.6);
 }
 
 .final-message{
-    background:rgba(255,255,255,.12);
-    border:1px solid rgba(255,255,255,.22);
+    background:rgba(255,255,255,.16);
+    border:1px solid rgba(255,255,255,.35);
     border-radius:24px;
     padding:28px 22px;
     font-size:18px;
     line-height:2;
     white-space:pre-line;
-    box-shadow:0 15px 40px rgba(0,0,0,.3);
-    backdrop-filter:blur(8px);
+    box-shadow:0 15px 40px rgba(60,10,35,.3);
+    backdrop-filter:blur(10px);
 }
 
 .final-back{
@@ -368,13 +393,15 @@ body{
     padding:13px 30px;
     border:0;
     border-radius:40px;
-    background:rgba(255,255,255,.18);
+    background:rgba(255,255,255,.2);
     color:white;
     font-size:16px;
     cursor:pointer;
 }
 
-/* ================= HEARTS ================= */
+/* =========================
+   HEARTS
+========================= */
 
 .heart{
     position:absolute;
@@ -391,7 +418,9 @@ body{
 .h4{left:74%;animation-duration:12s;animation-delay:3s}
 .h5{left:90%;animation-duration:10s;animation-delay:1s}
 
-/* ================= ANIMATIONS ================= */
+/* =========================
+   ANIMATIONS
+========================= */
 
 @keyframes fadeIn{
     from{opacity:0;transform:translateY(20px)}
@@ -404,11 +433,6 @@ body{
 }
 
 @keyframes letterAppear{
-    from{opacity:0;transform:translateY(20px)}
-    to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes messageIn{
     from{opacity:0;transform:translateY(20px)}
     to{opacity:1;transform:translateY(0)}
 }
@@ -453,7 +477,7 @@ body{
 
 <body>
 
-<!-- ================= PAGE 1 ================= -->
+<!-- PAGE 1 -->
 
 <section id="page1" class="page active">
 
@@ -472,7 +496,7 @@ body{
 </section>
 
 
-<!-- ================= PAGE 3 ================= -->
+<!-- PAGE 3 -->
 
 <section id="page3" class="page">
 
@@ -524,7 +548,7 @@ body{
 </section>
 
 
-<!-- ================= PAGE 4 ================= -->
+<!-- MEMORY PAGE -->
 
 <section id="memoryPage">
 
@@ -539,35 +563,54 @@ body{
     <div class="memory-grid">
 
         <div class="memory-card">
+
             <img src="photo1.jpg" alt="Photo 1">
+
             <h3>22-December-2025</h3>
+
             <button onclick="openDetail(1)">
                 VIEW MEMORY ❤️
             </button>
+
         </div>
 
+
         <div class="memory-card">
+
             <img src="photo2.jpg" alt="Photo 2">
+
             <h3>13-January-2026</h3>
+
             <button onclick="openDetail(2)">
                 VIEW MEMORY ❤️
             </button>
+
         </div>
 
+
         <div class="memory-card">
+
             <img src="photo3.jpg" alt="Photo 3">
+
             <h3>5-April-2026</h3>
+
             <button onclick="openDetail(3)">
                 VIEW MEMORY ❤️
             </button>
+
         </div>
 
+
         <div class="memory-card">
+
             <img src="photo4.jpg" alt="Photo 4">
+
             <h3>23-April-2026</h3>
+
             <button onclick="openDetail(4)">
                 VIEW MEMORY ❤️
             </button>
+
         </div>
 
     </div>
@@ -575,7 +618,7 @@ body{
 </section>
 
 
-<!-- ================= DETAIL PAGE ================= -->
+<!-- DETAIL PAGE -->
 
 <section id="detailPage" class="detail-page">
 
@@ -583,24 +626,18 @@ body{
 
         <h1 id="detailTitle" class="detail-title"></h1>
 
-        <img id="detailImage"
-             class="detail-image"
-             src=""
-             alt="Memory">
+        <img id="detailImage" class="detail-image" src="" alt="Memory">
 
-        <div id="detailMessage"
-             class="detail-message"></div>
+        <div id="detailMessage" class="detail-message"></div>
 
-        <div id="detailButtonArea"
-             class="detail-buttons">
-        </div>
+        <div id="detailButtonArea"></div>
 
     </div>
 
 </section>
 
 
-<!-- ================= PAGE 5 ================= -->
+<!-- PAGE 5 -->
 
 <section id="page5">
 
@@ -624,16 +661,12 @@ body{
 অনেক অনেক ভালোবাসি তোমায়। অনেক বেশি। ❤️
         </div>
 
-        <button class="final-back" onclick="backToMemory()">
-            ← BACK TO VIEW MEMORY
-        </button>
-
     </div>
 
 </section>
 
 
-<!-- ================= AUDIO ================= -->
+<!-- AUDIO FILES -->
 
 <audio id="birthdayMusic" preload="auto">
     <source src="birthday.mp3" type="audio/mpeg">
@@ -654,7 +687,9 @@ body{
 
 <script>
 
-/* ================= PAGE ELEMENTS ================= */
+/* =========================
+   ELEMENTS
+========================= */
 
 const page1 = document.getElementById("page1");
 const page3 = document.getElementById("page3");
@@ -668,20 +703,20 @@ const photo2Music = document.getElementById("photo2Music");
 const page5Music = document.getElementById("page5Music");
 
 
-/* ================= HIDE ALL ================= */
+/* =========================
+   PAGE CONTROL
+========================= */
 
 function hideAllPages(){
 
     page1.classList.remove("active");
     page3.classList.remove("active");
 
-    memoryPage.style.display="none";
-    detailPage.style.display="none";
-    page5.style.display="none";
+    memoryPage.style.display = "none";
+    detailPage.style.display = "none";
+    page5.style.display = "none";
 }
 
-
-/* ================= STOP MUSIC ================= */
 
 function stopAllMusic(){
 
@@ -690,18 +725,23 @@ function stopAllMusic(){
         photo1Music,
         photo2Music,
         page5Music
-    ].forEach(audio=>{
+    ].forEach(audio => {
+
         audio.pause();
-        audio.currentTime=0;
+        audio.currentTime = 0;
+
     });
 }
 
 
-/* ================= PAGE 3 ================= */
+/* =========================
+   PAGE 3
+========================= */
 
 function goToPage3(){
 
     hideAllPages();
+
     stopAllMusic();
 
     page3.classList.add("active");
@@ -712,17 +752,26 @@ function goToPage3(){
 
 function startBirthdayAnimation(){
 
-    const first=document.getElementById("birthdayFirst");
-    const second=document.getElementById("birthdaySecond");
-    const third=document.getElementById("birthdayThird");
-    const open=document.getElementById("birthdayOpen");
+    const first =
+        document.getElementById("birthdayFirst");
 
-    first.style.display="block";
-    second.style.display="none";
-    third.style.display="none";
-    open.style.display="none";
+    const second =
+        document.getElementById("birthdaySecond");
 
-    birthdayMusic.currentTime=0;
+    const third =
+        document.getElementById("birthdayThird");
+
+    const open =
+        document.getElementById("birthdayOpen");
+
+
+    first.style.display = "block";
+    second.style.display = "none";
+    third.style.display = "none";
+    open.style.display = "none";
+
+
+    birthdayMusic.currentTime = 0;
 
     birthdayMusic.play().catch(()=>{});
 
@@ -733,27 +782,33 @@ function startBirthdayAnimation(){
 
         if(!page3.classList.contains("active")) return;
 
-        first.style.display="none";
-        second.style.display="block";
+        first.style.display = "none";
+
+        second.style.display = "block";
 
         second.classList.remove("fade-animation");
+
         void second.offsetWidth;
+
         second.classList.add("fade-animation");
 
     },5000);
 
 
-    /* NEXT 5 SECONDS */
+    /* SECOND 5 SECONDS */
 
     setTimeout(()=>{
 
         if(!page3.classList.contains("active")) return;
 
-        second.style.display="none";
-        third.style.display="block";
+        second.style.display = "none";
+
+        third.style.display = "block";
 
         third.classList.remove("letter-animation");
+
         void third.offsetWidth;
+
         third.classList.add("letter-animation");
 
         typeLetter();
@@ -761,51 +816,59 @@ function startBirthdayAnimation(){
     },10000);
 
 
-    /* MUSIC END */
+    /* MUSIC END = OPEN */
 
-    birthdayMusic.onended=function(){
+    birthdayMusic.onended = function(){
 
         if(page3.classList.contains("active")){
 
-            open.style.display="block";
+            open.style.display = "block";
 
-            open.classList.remove("fade-animation");
-            void open.offsetWidth;
             open.classList.add("fade-animation");
 
         }
 
     };
+
 }
 
 
-/* ================= LETTER ================= */
+/* =========================
+   LETTER
+========================= */
 
 function typeLetter(){
 
-    const text="তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
+    const text =
+        "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
 
-    const element=document.getElementById("letterText");
+    const element =
+        document.getElementById("letterText");
 
-    element.textContent="";
+    element.textContent = "";
 
-    let index=0;
+    let index = 0;
 
-    const timer=setInterval(()=>{
+    const timer = setInterval(()=>{
 
-        element.textContent+=text.charAt(index);
+        element.textContent += text.charAt(index);
 
         index++;
 
-        if(index>=text.length){
+        if(index >= text.length){
+
             clearInterval(timer);
+
         }
 
     },110);
+
 }
 
 
-/* ================= MEMORY PAGE ================= */
+/* =========================
+   MEMORY PAGE
+========================= */
 
 function openMemoryPage(){
 
@@ -813,22 +876,27 @@ function openMemoryPage(){
 
     page3.classList.remove("active");
 
-    memoryPage.style.display="block";
+    memoryPage.style.display = "block";
 
     window.scrollTo(0,0);
 }
 
 
-/* ================= MEMORY DATA ================= */
+/* =========================
+   MEMORY DATA
+========================= */
 
-const memories={
+const memories = {
 
 1:{
     title:"22-December-2025",
     image:"photo1.jpg",
     music:photo1Music,
+    buttonText:"NEXT PHOTO 2 ❤️",
+    buttonClass:"photo1-button",
 
-    message:`Onk din kotha bolar por amader prothom meet hoyechilo ei dine.
+    message:
+`Onk din kotha bolar por amader prothom meet hoyechilo ei dine.
 
 Tomake bole bujhate parbo na, amar jonno oi din ta kotota special chilo. Cina nai, jana nei—amar jonno tumi hostel theke chole ascho.
 
@@ -840,7 +908,9 @@ Ami ki je koshte chilam, ekmatro ami jani ar uporwala janen.
 
 Tomake amar bishoy gulo share korte chaichilam na. Vebechilam, hudai nijer kosto gulo onno jonke bole take kosto diye ki hobe.
 
-Pore na pere bole fellam. Ar ami emon ekta manush—amar kotha gulo khub mon diye shunecho ar bujhar o try korecho. Emonki amar kosto gulo nijer mone korecho.
+Pore na pere bole fellam.
+
+Ar ami emon ekta manush—amar kotha gulo khub mon diye shunecho ar bujhar o try korecho. Emonki amar kosto gulo nijer mone korecho.
 
 Thik tokhoni amar tomake valo lagte shuru korechilo.
 
@@ -849,12 +919,16 @@ Jani onnoder chokhe tumi kemon. But amar chokhe tomar cheye shundor nari arekta 
 U r best. ❤️`
 },
 
+
 2:{
     title:"13-January-2026",
     image:"photo2.jpg",
     music:photo2Music,
+    buttonText:"NEXT PHOTO 3 ❤️",
+    buttonClass:"photo2-button",
 
-    message:`Amader ei vabe er age orokom pic tola hoyni.
+    message:
+`Amader ei vabe er age orokom pic tola hoyni.
 
 Ei cobita jedin tola hoyechilo, oi din tumi basay esechile, dhukte paroni. Pore amra ber hoye Agargaon giyechilam park e.
 
@@ -865,12 +939,16 @@ Amar khub kharap legechilo. Ami ekta manushke eto tai kosto diye felechi je se k
 Tomake tokhono onek bujhaitam je amar mukh ta emon, jeta aj porjonto bujhate parini—naki bujhte chao na, jani na. ❤️`
 },
 
+
 3:{
     title:"5-April-2026",
     image:"photo3.jpg",
     music:null,
+    buttonText:"NEXT PHOTO 4 ❤️",
+    buttonClass:"photo3-button",
 
-    message:`5 April er age amar khub baje ekta somoy par hoyechilo.
+    message:
+`5 April er age amar khub baje ekta somoy par hoyechilo.
 
 Na partechilam tomake bujhate, ar na partechilam nijeke control korte. Onk koste din par hocchilo.
 
@@ -891,12 +969,16 @@ Ato valo moment par korar por hostel e dhukte na pere amake ki ki je bolechilo, 
 Tobe jay hok, always e ami tomake kosto dei shob dik theke. ❤️`
 },
 
+
 4:{
     title:"23-April-2026",
     image:"photo4.jpg",
     music:null,
+    buttonText:"OPEN ❤️",
+    buttonClass:"photo4-button",
 
-    message:`Ki jani karone tumi Teknaf gele abar.
+    message:
+`Ki jani karone tumi Teknaf gele abar.
 
 Ami tomake meet korar jonno onek try koreo tumi meet koroni. Tokhon to amar Dhaka asar kono planning o chilo na.
 
@@ -924,37 +1006,56 @@ Ar amar kotha gulo kane newar dorkar tai ki? Kaner bahire rakho kichu somoyer jo
 };
 
 
-/* ================= OPEN DETAIL ================= */
+/* =========================
+   OPEN DETAIL
+========================= */
 
 function openDetail(number){
 
-    const memory=memories[number];
-
-    memoryPage.style.display="none";
-    detailPage.style.display="block";
-
-    /* আলাদা background */
-
-    detailPage.className="detail-page photo"+number+"-bg";
-
-    document.getElementById("detailTitle").textContent=memory.title;
-
-    document.getElementById("detailImage").src=memory.image;
-
-    document.getElementById("detailMessage").textContent=memory.message;
-
-    const buttonArea=document.getElementById("detailButtonArea");
-
-    buttonArea.innerHTML="";
+    const memory = memories[number];
 
     stopAllMusic();
+
+    memoryPage.style.display = "none";
+
+    detailPage.style.display = "block";
+
+
+    /* CHANGE BACKGROUND */
+
+    detailPage.classList.remove(
+        "photo1-bg",
+        "photo2-bg",
+        "photo3-bg",
+        "photo4-bg"
+    );
+
+    detailPage.classList.add(
+        "photo" + number + "-bg"
+    );
+
+
+    document.getElementById("detailTitle").textContent =
+        memory.title;
+
+    document.getElementById("detailImage").src =
+        memory.image;
+
+    document.getElementById("detailMessage").textContent =
+        memory.message;
+
+
+    const buttonArea =
+        document.getElementById("detailButtonArea");
+
+    buttonArea.innerHTML = "";
 
 
     /* PHOTO 1 MUSIC */
 
-    if(number===1){
+    if(number === 1){
 
-        photo1Music.currentTime=0;
+        photo1Music.currentTime = 0;
 
         photo1Music.play().catch(()=>{});
 
@@ -963,114 +1064,96 @@ function openDetail(number){
 
     /* PHOTO 2 MUSIC */
 
-    if(number===2){
+    if(number === 2){
 
-        photo2Music.currentTime=0;
+        photo2Music.currentTime = 0;
 
         photo2Music.play().catch(()=>{});
 
     }
 
 
-    /*
-       PHOTO 1 → PHOTO 2
-       PHOTO 2 → PHOTO 3
-       PHOTO 3 → PHOTO 4
-    */
+    /* NEXT / OPEN BUTTON */
 
-    if(number<4){
+    const button =
+        document.createElement("button");
 
-        const nextButton=document.createElement("button");
+    button.className =
+        "detail-next " + memory.buttonClass;
 
-        nextButton.className="next-btn";
+    button.textContent =
+        memory.buttonText;
 
-        nextButton.textContent=
-            "NEXT → PHOTO "+(number+1);
 
-        nextButton.onclick=function(){
+    if(number === 1){
 
-            openDetail(number+1);
+        button.onclick = function(){
+
+            openDetail(2);
 
         };
-
-        buttonArea.appendChild(nextButton);
 
     }
 
 
-    /*
-       PHOTO 4 → PAGE 5
-    */
+    if(number === 2){
 
-    if(number===4){
+        button.onclick = function(){
 
-        const openButton=document.createElement("button");
+            openDetail(3);
 
-        openButton.className="page5-open";
+        };
 
-        openButton.textContent="OPEN ❤️";
+    }
 
-        openButton.onclick=function(){
+
+    if(number === 3){
+
+        button.onclick = function(){
+
+            openDetail(4);
+
+        };
+
+    }
+
+
+    if(number === 4){
+
+        button.onclick = function(){
 
             openPage5();
 
         };
 
-        buttonArea.appendChild(openButton);
-
     }
 
 
-    /* BACK BUTTON */
-
-    const backButton=document.createElement("button");
-
-    backButton.className="back-btn";
-
-    backButton.textContent="← BACK TO VIEW MEMORY";
-
-    backButton.onclick=function(){
-
-        backToMemory();
-
-    };
-
-    buttonArea.appendChild(backButton);
+    buttonArea.appendChild(button);
 
     window.scrollTo(0,0);
 }
 
 
-/* ================= PAGE 5 ================= */
+/* =========================
+   PAGE 5
+========================= */
 
 function openPage5(){
 
     stopAllMusic();
 
-    detailPage.style.display="none";
+    detailPage.style.display = "none";
 
-    page5.style.display="block";
+    page5.style.display = "block";
 
     window.scrollTo(0,0);
 
-    page5Music.currentTime=0;
+
+    page5Music.currentTime = 0;
 
     page5Music.play().catch(()=>{});
-}
 
-
-/* ================= BACK ================= */
-
-function backToMemory(){
-
-    stopAllMusic();
-
-    detailPage.style.display="none";
-    page5.style.display="none";
-
-    memoryPage.style.display="block";
-
-    window.scrollTo(0,0);
 }
 
 </script>
