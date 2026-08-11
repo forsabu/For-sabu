@@ -183,6 +183,7 @@ body{
 }
 
 .birthday-title{
+    display:block;
     font-size:clamp(32px,8vw,65px);
     line-height:1.18;
     letter-spacing:2px;
@@ -220,7 +221,6 @@ body{
 }
 
 .birthday-second.animate{
-    display:block;
     animation:secondText 5s ease forwards;
 }
 
@@ -267,23 +267,16 @@ body{
     }
 }
 
-.music-note{
-    position:absolute;
-    bottom:30px;
-    left:50%;
-    transform:translateX(-50%);
-    font-family:Arial,sans-serif;
-    font-size:10px;
-    letter-spacing:2px;
-    color:rgba(255,255,255,.4);
-}
-
 .page3-open{
     display:none;
     margin-top:35px;
 }
 
-/* Floating birthday decorations */
+.page3-audio{
+    display:none;
+}
+
+/* Floating decorations */
 
 .decoration{
     position:absolute;
@@ -473,12 +466,11 @@ body{
 }
 
 .memory-music{
-    margin-top:30px;
-    width:min(100%,500px);
-    opacity:.85;
+    display:none;
 }
 
-.back-btn{
+.back-btn,
+.page5-open{
     margin-top:35px;
     padding:13px 28px;
     border:1px solid #d99aaf;
@@ -489,6 +481,49 @@ body{
     font-size:12px;
     letter-spacing:2px;
     cursor:pointer;
+}
+
+.page5-open{
+    display:inline-block;
+}
+
+/* =========================
+   PAGE 5
+========================= */
+
+#page5{
+    background:
+    radial-gradient(circle at 50% 20%,#812c53 0%,#351425 45%,#09050b 100%);
+    padding:60px 20px;
+    overflow-y:auto;
+}
+
+.page5-container{
+    position:relative;
+    z-index:5;
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+.page5-container h1{
+    font-size:clamp(34px,8vw,60px);
+    font-weight:normal;
+    line-height:1.3;
+    margin-bottom:35px;
+}
+
+.page5-message{
+    text-align:left;
+    font-family:Arial,sans-serif;
+    font-size:17px;
+    line-height:2.1;
+    color:#f8e1e8;
+    white-space:pre-line;
+}
+
+.page5-audio{
+    display:none;
 }
 
 /* =========================
@@ -514,11 +549,17 @@ body{
         font-size:15px;
         line-height:1.9;
     }
+
+    .page5-message{
+        font-size:15px;
+        line-height:2;
+    }
 }
 </style>
 </head>
 
 <body>
+
 
 <!-- =========================
      PAGE 1
@@ -579,12 +620,13 @@ body{
         </div>
 
         <div id="birthdaySecond" class="birthday-second">
-            MANY MANY HAPPY RETURNS<br>
-            OF THE DAY. ❤️
+            MANY MANY HAPPY RETURNS OF THE DAY. ❤️
         </div>
 
         <div id="birthdayMessage" class="birthday-message">
+            তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে🥰
         </div>
+    
 
         <button id="page3Open"
                 class="open-btn page3-open"
@@ -594,20 +636,11 @@ body{
 
     </div>
 
-    <div class="music-note">
-        ♪ MUSIC SPACE READY ♪
-    </div>
-
-    <!--
-    ভবিষ্যতে Page 3-এর music এখানে বসবে।
-
-    উদাহরণ:
-
-    <audio id="birthdayMusic" controls>
+    <audio id="birthdayMusic"
+           class="page3-audio"
+           preload="auto">
         <source src="birthday.mp3" type="audio/mpeg">
     </audio>
-
-    -->
 
 </section>
 
@@ -721,37 +754,31 @@ body{
         </h1>
 
         <div class="memory-text">
-
 অনেক দিন কথা বলার পর আমাদের প্রথম meet হয়েছিল এই দিনে।
 
-তোমাকে বলে বোঝাতে পারব না আমার জন্য ওই দিনটা কতটা special ছিল।
+তোমাকে বলে বোঝাতে পারব না আমার জন্য ওই দিনটা কতটা special ছিল। চেনা নেই, জানা নেই—আমার জন্য তুমি hostel থেকে চলে আসছো। আমি চেয়েছিলাম তোমার সব request রাখতে। জানি না ওই দিন পেরেছিলাম কি না।
 
-চেনা নেই, জানা নেই—আমার জন্য তুমি hostel থেকে চলে আসছো। আমি চেয়েছিলাম তোমার সব request রাখতে। জানি না ওই দিন পেরেছিলাম কি না।
+তোমার অনেক কিছু দেখার ইচ্ছে ছিল। দেখাতে পেরেছিলাম কি না।
 
-তোমার অনেক কিছু দেখার ইচ্ছে ছিল। দেখাতে পেরেছিলাম কি না জানি না।
-
-চাচ্ছিলাম আমার জন্য না হোক, তোমার জন্য দিনটা special করার জন্য।
+চাচ্ছিলাম আমার জন্য না হোক তোমার জন্য দিনটা special করার জন্য।
 
 আমি কী যে কষ্টে ছিলাম একমাত্র আমি জানি আর উপরওয়ালা।
 
 তোমাকে আমার বিষয়গুলো share করতে চাচ্ছিলাম না। ভেবেছিলাম হুদাই নিজের কষ্টগুলো অন্যজনকে বলে তাকে কষ্ট দিয়ে কী হবে।
 
-পরে না পেরে বলে ফেললাম।
-
-আর আমি এমন একজন মানুষ—আমার কথাগুলো খুব মন দিয়ে শুনেছো এবং বোঝারও try করেছো। এমনকি আমার কষ্টগুলো নিজের মনে করেছো।
+পরে না পেরে বলে ফেললাম আর আমি এমন একটা মানুষ—আমার কথাগুলো খুব মন দিয়ে শুনেছো আর বোঝারও try করেছো। এমনকি আমার কষ্টগুলো নিজের মনে করেছো।
 
 ঠিক তখনই আমার তোমাকে ভালো লাগতে শুরু করেছিল।
 
-জানি অন্যদের চোখে তুমি কেমন।
-
-But আমার চোখে তোমার চেয়ে সুন্দর নারী আরেকটা নেই।
+জানি অন্যদের চোখে তুমি কেমন। But আমার চোখে তোমার চেয়ে সুন্দর নারী আরেকটা নেই।
 
 U R BEST. ❤️
-
         </div>
 
-        <audio class="memory-music" controls>
-            <!-- Photo 1-এর music পরে এখানে বসবে -->
+        <audio id="photo1Music"
+               class="memory-music"
+               preload="auto">
+            <source src="photo1.mp3" type="audio/mpeg">
         </audio>
 
         <button class="back-btn"
@@ -781,23 +808,19 @@ U R BEST. ❤️
         </h1>
 
         <div class="memory-text">
-
-আমাদের এভাবে এর আগে এরকম pic তোলা হয়নি।
-
-এই ছবিটা যেদিন তোলা হয়েছিল, ওই দিন তুমি বাসায় এসেছিলে, ঢুকতে পারোনি। পরে আমরা বের হয়ে Agargaon গিয়ে park-এ গিয়েছিলাম।
+আমাদের এভাবে এর আগে এরকম pic তোলা হয়নি। এই ছবিটা যেদিন তোলা হয়েছিল ওই দিন তুমি বাসায় এসেছিলে ঢুকতে পারোনি। পরে আমরা বের হয়ে Agargaon গিয়ে park-এ গিয়েছিলাম।
 
 কী জানি কী কথা একটা নিয়ে তুমি কান্না করে দিয়েছিলে।
 
 আমার খুব খারাপ লেগেছিল। আমি একটা মানুষকে এতটাই কষ্ট দিয়ে ফেলেছি যে সে কান্না পর্যন্ত করে দিয়েছে।
 
-তোমাকে তখনও অনেক বুঝাতাম যে আমার মুখটা এমন—যেটা আজ পর্যন্ত বোঝাতে পারিনি।
-
-নাকি বুঝতে চাও না, জানি না।
-
+তোমাকে তখনও অনেক বুঝাতাম যে আমার মুখটা এমন যেটা আজ পর্যন্ত বোঝাতে পারিনি নাকি বুঝতে চাও না জানি না।
         </div>
 
-        <audio class="memory-music" controls>
-            <!-- Photo 2-এর music পরে এখানে বসবে -->
+        <audio id="photo2Music"
+               class="memory-music"
+               preload="auto">
+            <source src="photo2.mp3" type="audio/mpeg">
         </audio>
 
         <button class="back-btn"
@@ -827,34 +850,22 @@ U R BEST. ❤️
         </h1>
 
         <div class="memory-text">
+5 April-এর আগে আমার খুব বাজে একটা সময় পার হয়েছিল। না পারছিলাম তোমাকে বোঝাতে আর না পারছিলাম নিজেকে control করতে।
 
-5 April-এর আগে আমার খুব বাজে একটা সময় পার হয়েছিল।
+অনেক কষ্টে দিন পার হচ্ছিল। প্রতিদিন একটা বিষয় নিয়ে ঝগড়া হতো। আমার দিকটা কতভাবে বোঝানোর চেষ্টা করেছি but বোঝাতে পারিনি।
 
-না পারছিলাম তোমাকে বোঝাতে, আর না পারছিলাম নিজেকে control করতে।
+আমার কাছে তখন টাকাও ছিল না যে আমি Dhaka যাব। দুই দিন কথা না হওয়ার পর 5 তারিখে আমাকে বললে তুমি Cox's Bazar চলে আসছো শুধু আমার জন্য।
 
-অনেক কষ্টে দিন পার হচ্ছিল। প্রতিদিন একটা বিষয় নিয়ে ঝগড়া হতো।
+একটা মানুষ কীভাবে আরেকটা মানুষের জন্য এতটা কষ্ট করতে পারে। খুব অবাক হয়েছিলাম ওই দিন।
 
-আমার দিকটা কতভাবে বোঝানোর চেষ্টা করেছি, but বোঝাতে পারিনি।
+হাতে টাকা ছিল না দাঁড়িয়ে চলে গেলাম Cox's Bazar।
 
-আমার কাছে তখন টাকাও ছিল না যে আমি Dhaka যাব।
+এত ঝগড়া এত কিছুর পর খুব সুন্দর একটা মুহূর্ত পার হয়েছিল।
 
-দুই দিন কথা না হওয়ার পর 5 তারিখে আমাকে বললে তুমি Cox's Bazar চলে আসছো শুধু আমার জন্য।
+এত ভালো moment পার করার পর Hostel-এ ঢুকতে না পেরে আমাকে কী কী যে বলেছিলে আমি মনে করতে চাই না।
 
-একটা মানুষ কীভাবে আরেকটা মানুষের জন্য এতটা কষ্ট করতে পারে—খুব অবাক হয়েছিলাম ওই দিন।
-
-হাতে টাকা ছিল না, দাঁড়িয়ে চলে গেলাম Cox's Bazar।
-
-এত ঝগড়া, এত কিছুর পর খুব সুন্দর একটা মুহূর্ত পার হয়েছিল।
-
-এত ভালো moment পার করার পর Hostel-এ ঢুকতে না পেরে আমাকে কী কী যে বলেছিলে, আমি মনে করতে চাই না।
-
-তবে যাই হোক—always-ই আমি তোমাকে কষ্ট দিই, সব দিক থেকে।
-
+তবে যাই হোক always-ই আমি তোমাকে কষ্ট দিই সব দিক থেকে।
         </div>
-
-        <audio class="memory-music" controls>
-            <!-- Photo 3-এর music পরে এখানে বসবে -->
-        </audio>
 
         <button class="back-btn"
                 onclick="backToMemories()">
@@ -883,43 +894,65 @@ U R BEST. ❤️
         </h1>
 
         <div class="memory-text">
-
 কী জানি কারণে তুমি Teknaf গেলে আবার।
 
-আমি তোমাকে meet করার জন্য অনেক try করেও তুমি meet করোনি।
+আমি তোমাকে meet করার জন্য অনেক try করেও তুমি meet করোনি। তখন তো আমার Dhaka আসার কোনো planning-ও ছিল না।
 
-তখন তো আমার Dhaka আসার কোনো planning-ও ছিল না।
-
-আবার ঝগড়া, আবার কথা হচ্ছিল না।
-
-তুমি তোমার মতো চলে যাচ্ছো। তার একদিন আগেই আমি ticket নিয়ে রেখেছিলাম Dhaka একসাথে যাওয়ার গাড়িতে। গিয়ে surprise দিলাম।
+আবার ঝগড়া আবার কথা হচ্ছিল না। তুমি তোমার মতো চলে যাচ্ছো। তার একদিন আগেই আমি ticket নিয়ে রেখেছিলাম Dhaka একসাথে যাওয়ার গাড়িতে। গিয়ে surprise দিলাম।
 
 আমাদের প্রথম কোনো movie দেখা একসাথে।
 
 Hall-এ ঢোকার আগে কত কথা শুনিয়েছি আমি।
 
-সত্যি কথা বলতে, আমি তোমাকে অনেক কষ্ট দিই আর তুমি সহ্য করেই যাচ্ছো।
+সত্যি কথা বলতে আমি তোমাকে অনেক কষ্ট দিই আর তুমি সহ্য করেই যাচ্ছো।
 
 আসলে আমাকে সহ্য করা অনেক কঠিন।
 
 এই কঠিন কাজটা তুমি always-ই করে যাচ্ছো।
 
 আর থেকে বড় সত্য কী জানি—তুমি আমাকে না বুঝেই কষ্ট পাও।
-
-আর আমার কথাগুলো কানে নেওয়ার দরকার তাই কি?
-
-কানের বাইরে রাখবা কিছু সময়ের জন্য। দেখবা, একটু পর সব ঠিক হয়ে গেছে। ❤️
-
+আর আমার কথাগুলো কানে নেওয়ার দরকার তাই কি কান-এর বাইরে রাখবা কিছু সময়ের জন্য। দেখবা একটু পর সব ঠিক হয়ে গেছে। ❤️
         </div>
 
-        <audio class="memory-music" controls>
-            <!-- Photo 4-এর music পরে এখানে বসবে -->
-        </audio>
-
-        <button class="back-btn"
-                onclick="backToMemories()">
-            ← BACK TO MEMORIES
+        <button class="page5-open"
+                onclick="openPage5()">
+            OPEN ❤️
         </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     PAGE 5
+========================= -->
+
+<section id="page5" class="page hidden">
+
+    <div class="page5-container">
+
+        <h1>
+            শুভ জন্মদিন প্রিয় ❤️
+        </h1>
+
+        <div class="page5-message">
+জীবনের তাগদির এগিয়ে যাওয়া এইপথ। মৃত্যুর সন্নিকটে আরেক ধাপ এগিয়ে। আজ থেকে শুরু হোক তোমার প্রতিটা ভোর নিজের সাথে ভালবাসা নিয়ে। তোমার চাওয়াগুলো ভালবাসার হোক। এমন কিছু প্রত্যাশা করিও না! যেটা না পেলে তোমাকে ভিষণ ভাবে ভেঙ্গে পরতে হবে।
+
+সবসময় মনে রাখবে তোমার কাছে যা আছে সেটাই তোমার । তুমি আরোও উদার হও, নিজেকে আরোও জাগ্রত করো।
+
+কারণে অকারণেই তোমার হাসিমুখটা অটুট রেখে নিজস্ব ভালবাসা নিয়ে ভরিও নিও নিজেকে, মনে রেখো নিজস্ব ভালবাসায় কোন হারানোর গল্প নেই বরং রয়েছে সুখের সমাপ্তি। বড্ড এলোমেলো হয়ে গেছো তুমি, নিজেকেও তো মাঝে মাঝে সময় দিতে পারো।
+
+তোমার এই শুভ দিনে তোমার পথচলা হোক তোমার মতন করে আনন্দের সাথে সুন্দর, জীবনের প্রত্যেকটা মুহুর্তের পরিসমাপ্তি ঘটুক হাসি মুখ নিয়ে, তোমার এই উজ্জ্বল হাসিটা কারণে হোক বা অকারণে অটল থাকোক এটাই কামনাই করি।
+
+আর সেই সাথে প্রার্থনা করি আমাদের এই পথ চলা যেনও শেষ নিঃশ্বাস ত্যাগ হওয়ার আগ পর্যন্ত দুনিয়ার কোন শক্তিতে ভেঙে না যায়। অনেক অনেক ভালোবাসি তোমায় অনেক বেশি। ❤️
+        </div>
+
+        <audio id="page5Music"
+               class="page5-audio"
+               preload="auto">
+            <source src="page5.mp3" type="audio/mpeg">
+        </audio>
 
     </div>
 
@@ -932,6 +965,9 @@ Hall-এ ঢোকার আগে কত কথা শুনিয়েছি 
    PAGE CONTROL
 ========================= */
 
+let page3Timer;
+let currentAudio = null;
+
 function hideAllPages(){
 
     document.querySelectorAll(
@@ -942,6 +978,24 @@ function hideAllPages(){
 
     });
 
+    stopAllMusic();
+}
+
+
+/* =========================
+   STOP ALL MUSIC
+========================= */
+
+function stopAllMusic(){
+
+    document.querySelectorAll("audio").forEach(function(audio){
+
+        audio.pause();
+        audio.currentTime = 0;
+
+    });
+
+    currentAudio = null;
 }
 
 
@@ -972,11 +1026,12 @@ function openBirthdayPage(){
         .classList.remove("hidden");
 
     startBirthdayAnimation();
+
 }
 
 
 /* =========================
-   PAGE 3 ANIMATION
+   PAGE 3 ANIMATION + MUSIC
 ========================= */
 
 function startBirthdayAnimation(){
@@ -993,6 +1048,11 @@ function startBirthdayAnimation(){
     const openButton =
         document.getElementById("page3Open");
 
+    const music =
+        document.getElementById("birthdayMusic");
+
+
+    clearTimeout(page3Timer);
 
     title.style.display="block";
     second.style.display="none";
@@ -1009,11 +1069,26 @@ function startBirthdayAnimation(){
     title.classList.add("animate");
 
 
+    /* Start Page 3 music */
+
+    currentAudio = music;
+
+    music.currentTime = 0;
+
+    music.play().catch(function(){
+
+        /* Browser autoplay fallback */
+
+    });
+
+
     /* Second 5 seconds */
 
     setTimeout(function(){
 
         title.style.display="none";
+
+        second.style.display="block";
 
         second.classList.remove("animate");
 
@@ -1024,7 +1099,7 @@ function startBirthdayAnimation(){
     },5000);
 
 
-    /* Letter animation */
+    /* Letter by letter */
 
     setTimeout(function(){
 
@@ -1041,28 +1116,44 @@ function startBirthdayAnimation(){
 
 
     /*
-       এখন music file নেই।
-       তাই message animation শেষ হওয়ার
-       পর OPEN button আসবে।
-
-       পরে Page 3-এর MP3 যোগ করলে
-       এই timing music-এর duration অনুযায়ী
-       পরিবর্তন করা যাবে।
+       Music শেষ হলে OPEN button.
+       যদি music file ঠিকমতো load হয়,
+       গান শেষ হওয়ার event ব্যবহার হবে।
     */
 
-    setTimeout(function(){
+    music.onended = function(){
 
         message.style.display="none";
 
         openButton.style.display="inline-block";
 
-    },16000);
+    };
+
+
+    /*
+       Music load না হলে fallback timing.
+    */
+
+    page3Timer = setTimeout(function(){
+
+        if(
+            !music.duration ||
+            !isFinite(music.duration)
+        ){
+
+            message.style.display="none";
+
+            openButton.style.display="inline-block";
+
+        }
+
+    },20000);
 
 }
 
 
 /* =========================
-   LETTER BY LETTER
+   LETTER ANIMATION
 ========================= */
 
 function createLetterAnimation(element,text){
@@ -1112,17 +1203,113 @@ function openMemory(number){
 
     hideAllPages();
 
-    document.getElementById(
-        "memory"+number
-    ).classList.remove("hidden");
+    const page =
+        document.getElementById(
+            "memory"+number
+        );
+
+    page.classList.remove("hidden");
 
     window.scrollTo(0,0);
+
+
+    /* Photo 1 music */
+
+    if(number === 1){
+
+        playMemoryMusic("photo1Music");
+
+    }
+
+
+    /* Photo 2 music */
+
+    if(number === 2){
+
+        playMemoryMusic("photo2Music");
+
+    }
+
+
+    /* Photo 3 → NO MUSIC */
+
+    if(number === 3){
+
+        stopAllMusic();
+
+    }
+
+
+    /* Photo 4 → NO MUSIC */
+
+    if(number === 4){
+
+        stopAllMusic();
+
+    }
 
 }
 
 
 /* =========================
-   MEMORY → PAGE 4
+   MEMORY MUSIC
+========================= */
+
+function playMemoryMusic(id){
+
+    const music =
+        document.getElementById(id);
+
+    if(!music) return;
+
+    currentAudio = music;
+
+    music.currentTime=0;
+
+    music.play().catch(function(){
+
+        /*
+        কিছু browser user interaction-এর
+        কারণে autoplay block করতে পারে।
+        */
+
+    });
+
+}
+
+
+/* =========================
+   PHOTO 4 → PAGE 5
+========================= */
+
+function openPage5(){
+
+    hideAllPages();
+
+    document.getElementById("page5")
+        .classList.remove("hidden");
+
+    window.scrollTo(0,0);
+
+
+    const music =
+        document.getElementById("page5Music");
+
+    currentAudio = music;
+
+    music.currentTime=0;
+
+    music.play().catch(function(){
+
+        /* Browser autoplay fallback */
+
+    });
+
+}
+
+
+/* =========================
+   BACK TO MEMORIES
 ========================= */
 
 function backToMemories(){
