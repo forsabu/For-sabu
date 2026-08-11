@@ -1,20 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For Sabu ❤️</title>
 
 <style>
-*{
-    box-sizing:border-box;
-    margin:0;
-    padding:0;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
     font-family:Georgia,"Times New Roman",serif;
@@ -31,9 +25,7 @@ body{
     overflow:hidden;
 }
 
-.page.active{
-    display:flex;
-}
+.page.active{display:flex}
 
 /* ================= PAGE 1 ================= */
 
@@ -42,13 +34,11 @@ body{
     justify-content:center;
     text-align:center;
     background:
-        radial-gradient(circle at 50% 30%,rgba(255,105,180,.28),transparent 35%),
-        linear-gradient(135deg,#100812,#260d25,#090912);
+    radial-gradient(circle at 50% 30%,rgba(255,105,180,.28),transparent 35%),
+    linear-gradient(135deg,#100812,#260d25,#090912);
 }
 
-.intro{
-    padding:30px;
-}
+.intro{padding:30px}
 
 .intro h1{
     font-size:clamp(28px,8vw,58px);
@@ -62,10 +52,13 @@ body{
     opacity:.8;
 }
 
-.open-btn{
+/* ================= BUTTON ================= */
+
+.open-btn,
+.next-btn{
     border:0;
     padding:15px 38px;
-    margin-top:35px;
+    margin-top:30px;
     border-radius:50px;
     background:linear-gradient(135deg,#ff5c9a,#ff86b7);
     color:white;
@@ -76,11 +69,13 @@ body{
     transition:.3s;
 }
 
-.open-btn:hover{
+.open-btn:hover,
+.next-btn:hover{
     transform:scale(1.06);
 }
 
-.open-btn:active{
+.open-btn:active,
+.next-btn:active{
     transform:scale(.96);
 }
 
@@ -91,9 +86,9 @@ body{
     justify-content:center;
     text-align:center;
     background:
-        radial-gradient(circle at 50% 25%,rgba(255,170,205,.42),transparent 28%),
-        radial-gradient(circle at 20% 80%,rgba(180,80,150,.3),transparent 30%),
-        linear-gradient(135deg,#180817,#481633,#16091d);
+    radial-gradient(circle at 50% 25%,rgba(255,170,205,.42),transparent 28%),
+    radial-gradient(circle at 20% 80%,rgba(180,80,150,.3),transparent 30%),
+    linear-gradient(135deg,#180817,#481633,#16091d);
 }
 
 #page3::before{
@@ -101,10 +96,10 @@ body{
     position:absolute;
     inset:0;
     background:
-        radial-gradient(circle at 10% 20%,rgba(255,255,255,.7) 0 2px,transparent 3px),
-        radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 2px,transparent 3px),
-        radial-gradient(circle at 60% 80%,rgba(255,255,255,.5) 0 2px,transparent 3px),
-        radial-gradient(circle at 30% 65%,rgba(255,255,255,.5) 0 2px,transparent 3px);
+    radial-gradient(circle at 10% 20%,rgba(255,255,255,.7) 0 2px,transparent 3px),
+    radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 2px,transparent 3px),
+    radial-gradient(circle at 60% 80%,rgba(255,255,255,.5) 0 2px,transparent 3px),
+    radial-gradient(circle at 30% 65%,rgba(255,255,255,.5) 0 2px,transparent 3px);
     background-size:220px 220px;
     animation:stars 8s linear infinite;
     pointer-events:none;
@@ -149,17 +144,11 @@ body{
     text-shadow:0 0 18px rgba(255,160,200,.55);
 }
 
-.hidden-animation{
-    display:none;
-}
+.hidden-animation{display:none}
 
-.fade-animation{
-    animation:fadeZoom 1s ease both;
-}
+.fade-animation{animation:fadeZoom 1s ease both}
 
-.letter-animation{
-    animation:letterAppear .7s ease both;
-}
+.letter-animation{animation:letterAppear .7s ease both}
 
 /* ================= MEMORY PAGE ================= */
 
@@ -167,11 +156,9 @@ body{
     display:none;
     min-height:100vh;
     padding:45px 18px 60px;
-
-    /* PHOTO 1-এর আগের background */
     background:
-        radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
-        linear-gradient(135deg,#100812,#271020,#0b0a13);
+    radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
+    linear-gradient(135deg,#100812,#271020,#0b0a13);
 }
 
 .memory-title{
@@ -237,52 +224,19 @@ body{
     min-height:100vh;
     padding:35px 20px 55px;
     position:relative;
-    overflow:hidden;
-}
-
-/* PHOTO 1 - আগের মতো */
-#detailPage.photo1-theme{
-    background:
-        radial-gradient(circle at 50% 10%,rgba(255,120,180,.25),transparent 30%),
-        linear-gradient(135deg,#120812,#301226,#0b0911);
-}
-
-/* PHOTO 2 - soft pink */
-#detailPage.photo2-theme{
-    background:
-        radial-gradient(circle at 20% 15%,rgba(255,190,220,.55),transparent 30%),
-        radial-gradient(circle at 85% 80%,rgba(220,140,190,.35),transparent 35%),
-        linear-gradient(135deg,#351528,#7b3b60,#291323);
-}
-
-/* PHOTO 3 - lavender */
-#detailPage.photo3-theme{
-    background:
-        radial-gradient(circle at 75% 15%,rgba(225,190,255,.5),transparent 30%),
-        radial-gradient(circle at 15% 80%,rgba(190,145,220,.35),transparent 35%),
-        linear-gradient(135deg,#24152f,#563d68,#19121f);
-}
-
-/* PHOTO 4 - blush rose */
-#detailPage.photo4-theme{
-    background:
-        radial-gradient(circle at 50% 10%,rgba(255,200,215,.55),transparent 30%),
-        radial-gradient(circle at 10% 85%,rgba(230,130,160,.35),transparent 35%),
-        linear-gradient(135deg,#3a1725,#713b50,#24111a);
+    transition:background 1s ease;
 }
 
 .detail-container{
     max-width:850px;
     margin:auto;
     text-align:center;
-    position:relative;
-    z-index:2;
 }
 
 .detail-title{
     font-size:clamp(27px,7vw,48px);
     margin-bottom:25px;
-    text-shadow:0 0 20px rgba(255,180,210,.45);
+    text-shadow:0 0 20px rgba(255,255,255,.3);
 }
 
 .detail-image{
@@ -300,29 +254,28 @@ body{
     text-align:left;
     font-size:18px;
     line-height:1.9;
-    color:#fff0f6;
+    color:#fff;
     white-space:pre-line;
+    animation:messageIn 1s ease;
 }
 
-.next-btn,
-.memory-back-btn{
+.detail-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:12px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.back-btn{
     border:0;
-    padding:14px 32px;
+    padding:13px 30px;
     border-radius:40px;
+    background:rgba(255,255,255,.16);
     color:white;
-    font-size:17px;
-    font-weight:bold;
+    font-size:16px;
     cursor:pointer;
-    margin:7px;
-}
-
-.next-btn{
-    background:linear-gradient(135deg,#ff5c9a,#ff9bc2);
-    box-shadow:0 0 25px rgba(255,100,170,.4);
-}
-
-.memory-back-btn{
-    background:rgba(255,255,255,.13);
 }
 
 .page5-open{
@@ -337,17 +290,51 @@ body{
     box-shadow:0 0 28px rgba(255,80,150,.45);
 }
 
+/* NEXT BUTTON */
+
+.next-btn{
+    margin-top:0;
+    padding:14px 35px;
+}
+
+/* ================= INDIVIDUAL BACKGROUNDS ================= */
+
+.detail-page.photo1-bg{
+    background:
+    radial-gradient(circle at 50% 10%,rgba(255,120,180,.3),transparent 30%),
+    linear-gradient(135deg,#120812,#301226,#0b0911);
+}
+
+.detail-page.photo2-bg{
+    background:
+    radial-gradient(circle at 20% 15%,rgba(255,190,220,.5),transparent 30%),
+    radial-gradient(circle at 80% 80%,rgba(220,170,255,.35),transparent 30%),
+    linear-gradient(135deg,#35152f,#7b456f,#24152e);
+}
+
+.detail-page.photo3-bg{
+    background:
+    radial-gradient(circle at 70% 20%,rgba(255,210,230,.45),transparent 30%),
+    radial-gradient(circle at 20% 80%,rgba(190,170,255,.3),transparent 30%),
+    linear-gradient(135deg,#27152f,#5b426d,#171221);
+}
+
+.detail-page.photo4-bg{
+    background:
+    radial-gradient(circle at 50% 15%,rgba(255,180,210,.5),transparent 28%),
+    radial-gradient(circle at 10% 85%,rgba(255,200,230,.25),transparent 30%),
+    linear-gradient(135deg,#42172f,#8c496d,#24101e);
+}
+
 /* ================= PAGE 5 ================= */
 
 #page5{
-    display:none;
     min-height:100vh;
     padding:45px 20px 70px;
-
     background:
-        radial-gradient(circle at 20% 10%,rgba(255,205,225,.5),transparent 30%),
-        radial-gradient(circle at 85% 75%,rgba(235,145,185,.4),transparent 35%),
-        linear-gradient(135deg,#3b1728,#743e5b,#24121d);
+    radial-gradient(circle at 50% 15%,rgba(255,200,225,.45),transparent 30%),
+    radial-gradient(circle at 10% 80%,rgba(220,170,255,.3),transparent 30%),
+    linear-gradient(135deg,#35152f,#734766,#211326);
 }
 
 .final-container{
@@ -359,19 +346,32 @@ body{
     text-align:center;
     font-size:clamp(28px,7vw,50px);
     margin-bottom:35px;
-    text-shadow:0 0 20px rgba(255,180,210,.6);
+    text-shadow:0 0 20px rgba(255,200,220,.7);
 }
 
 .final-message{
-    background:rgba(255,255,255,.09);
-    border:1px solid rgba(255,255,255,.2);
+    background:rgba(255,255,255,.12);
+    border:1px solid rgba(255,255,255,.22);
     border-radius:24px;
     padding:28px 22px;
     font-size:18px;
     line-height:2;
     white-space:pre-line;
     box-shadow:0 15px 40px rgba(0,0,0,.3);
-    backdrop-filter:blur(10px);
+    backdrop-filter:blur(8px);
+}
+
+.final-back{
+    display:block;
+    width:max-content;
+    margin:30px auto 0;
+    padding:13px 30px;
+    border:0;
+    border-radius:40px;
+    background:rgba(255,255,255,.18);
+    color:white;
+    font-size:16px;
+    cursor:pointer;
 }
 
 /* ================= HEARTS ================= */
@@ -399,25 +399,18 @@ body{
 }
 
 @keyframes fadeZoom{
-    from{
-        opacity:0;
-        transform:scale(.85);
-    }
-    to{
-        opacity:1;
-        transform:scale(1);
-    }
+    from{opacity:0;transform:scale(.85)}
+    to{opacity:1;transform:scale(1)}
 }
 
 @keyframes letterAppear{
-    from{
-        opacity:0;
-        transform:translateY(20px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes messageIn{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
 }
 
 @keyframes stars{
@@ -503,7 +496,6 @@ body{
 
         </div>
 
-
         <div id="birthdaySecond" class="hidden-animation">
 
             <div class="returns">
@@ -513,13 +505,11 @@ body{
 
         </div>
 
-
         <div id="birthdayThird" class="hidden-animation">
 
             <div id="letterText" class="letter-text"></div>
 
         </div>
-
 
         <div id="birthdayOpen" class="hidden-animation">
 
@@ -551,37 +541,30 @@ body{
         <div class="memory-card">
             <img src="photo1.jpg" alt="Photo 1">
             <h3>22-December-2025</h3>
-
             <button onclick="openDetail(1)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
-
         <div class="memory-card">
             <img src="photo2.jpg" alt="Photo 2">
             <h3>13-January-2026</h3>
-
             <button onclick="openDetail(2)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
-
         <div class="memory-card">
             <img src="photo3.jpg" alt="Photo 3">
             <h3>5-April-2026</h3>
-
             <button onclick="openDetail(3)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
-
         <div class="memory-card">
             <img src="photo4.jpg" alt="Photo 4">
             <h3>23-April-2026</h3>
-
             <button onclick="openDetail(4)">
                 VIEW MEMORY ❤️
             </button>
@@ -600,16 +583,17 @@ body{
 
         <h1 id="detailTitle" class="detail-title"></h1>
 
-        <img
-            id="detailImage"
-            class="detail-image"
-            src=""
-            alt="Memory"
-        >
+        <img id="detailImage"
+             class="detail-image"
+             src=""
+             alt="Memory">
 
-        <div id="detailMessage" class="detail-message"></div>
+        <div id="detailMessage"
+             class="detail-message"></div>
 
-        <div id="detailButtonArea"></div>
+        <div id="detailButtonArea"
+             class="detail-buttons">
+        </div>
 
     </div>
 
@@ -640,6 +624,10 @@ body{
 অনেক অনেক ভালোবাসি তোমায়। অনেক বেশি। ❤️
         </div>
 
+        <button class="final-back" onclick="backToMemory()">
+            ← BACK TO VIEW MEMORY
+        </button>
+
     </div>
 
 </section>
@@ -668,35 +656,16 @@ body{
 
 /* ================= PAGE ELEMENTS ================= */
 
-const page1 =
-    document.getElementById("page1");
+const page1 = document.getElementById("page1");
+const page3 = document.getElementById("page3");
+const memoryPage = document.getElementById("memoryPage");
+const detailPage = document.getElementById("detailPage");
+const page5 = document.getElementById("page5");
 
-const page3 =
-    document.getElementById("page3");
-
-const memoryPage =
-    document.getElementById("memoryPage");
-
-const detailPage =
-    document.getElementById("detailPage");
-
-const page5 =
-    document.getElementById("page5");
-
-
-/* AUDIO */
-
-const birthdayMusic =
-    document.getElementById("birthdayMusic");
-
-const photo1Music =
-    document.getElementById("photo1Music");
-
-const photo2Music =
-    document.getElementById("photo2Music");
-
-const page5Music =
-    document.getElementById("page5Music");
+const birthdayMusic = document.getElementById("birthdayMusic");
+const photo1Music = document.getElementById("photo1Music");
+const photo2Music = document.getElementById("photo2Music");
+const page5Music = document.getElementById("page5Music");
 
 
 /* ================= HIDE ALL ================= */
@@ -706,9 +675,9 @@ function hideAllPages(){
     page1.classList.remove("active");
     page3.classList.remove("active");
 
-    memoryPage.style.display = "none";
-    detailPage.style.display = "none";
-    page5.style.display = "none";
+    memoryPage.style.display="none";
+    detailPage.style.display="none";
+    page5.style.display="none";
 }
 
 
@@ -716,17 +685,15 @@ function hideAllPages(){
 
 function stopAllMusic(){
 
-    birthdayMusic.pause();
-    birthdayMusic.currentTime = 0;
-
-    photo1Music.pause();
-    photo1Music.currentTime = 0;
-
-    photo2Music.pause();
-    photo2Music.currentTime = 0;
-
-    page5Music.pause();
-    page5Music.currentTime = 0;
+    [
+        birthdayMusic,
+        photo1Music,
+        photo2Music,
+        page5Music
+    ].forEach(audio=>{
+        audio.pause();
+        audio.currentTime=0;
+    });
 }
 
 
@@ -745,47 +712,32 @@ function goToPage3(){
 
 function startBirthdayAnimation(){
 
-    const first =
-        document.getElementById("birthdayFirst");
+    const first=document.getElementById("birthdayFirst");
+    const second=document.getElementById("birthdaySecond");
+    const third=document.getElementById("birthdayThird");
+    const open=document.getElementById("birthdayOpen");
 
-    const second =
-        document.getElementById("birthdaySecond");
+    first.style.display="block";
+    second.style.display="none";
+    third.style.display="none";
+    open.style.display="none";
 
-    const third =
-        document.getElementById("birthdayThird");
+    birthdayMusic.currentTime=0;
 
-    const open =
-        document.getElementById("birthdayOpen");
-
-
-    first.style.display = "block";
-    second.style.display = "none";
-    third.style.display = "none";
-    open.style.display = "none";
-
-
-    /* Birthday music */
-
-    birthdayMusic.currentTime = 0;
-
-    birthdayMusic.play().catch(() => {});
+    birthdayMusic.play().catch(()=>{});
 
 
     /* FIRST 5 SECONDS */
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        if(!page3.classList.contains("active"))
-            return;
+        if(!page3.classList.contains("active")) return;
 
-        first.style.display = "none";
-
-        second.style.display = "block";
+        first.style.display="none";
+        second.style.display="block";
 
         second.classList.remove("fade-animation");
-
         void second.offsetWidth;
-
         second.classList.add("fade-animation");
 
     },5000);
@@ -793,19 +745,15 @@ function startBirthdayAnimation(){
 
     /* NEXT 5 SECONDS */
 
-    setTimeout(() => {
+    setTimeout(()=>{
 
-        if(!page3.classList.contains("active"))
-            return;
+        if(!page3.classList.contains("active")) return;
 
-        second.style.display = "none";
-
-        third.style.display = "block";
+        second.style.display="none";
+        third.style.display="block";
 
         third.classList.remove("letter-animation");
-
         void third.offsetWidth;
-
         third.classList.add("letter-animation");
 
         typeLetter();
@@ -813,20 +761,21 @@ function startBirthdayAnimation(){
     },10000);
 
 
-    /* Music শেষ হলে OPEN */
+    /* MUSIC END */
 
-    birthdayMusic.onended = function(){
+    birthdayMusic.onended=function(){
 
         if(page3.classList.contains("active")){
 
-            open.style.display = "block";
+            open.style.display="block";
 
+            open.classList.remove("fade-animation");
+            void open.offsetWidth;
             open.classList.add("fade-animation");
 
         }
 
     };
-
 }
 
 
@@ -834,31 +783,25 @@ function startBirthdayAnimation(){
 
 function typeLetter(){
 
-    const text =
-        "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
+    const text="তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
 
-    const element =
-        document.getElementById("letterText");
+    const element=document.getElementById("letterText");
 
-    element.textContent = "";
+    element.textContent="";
 
-    let index = 0;
+    let index=0;
 
-    const timer =
-        setInterval(() => {
+    const timer=setInterval(()=>{
 
-            element.textContent +=
-                text.charAt(index);
+        element.textContent+=text.charAt(index);
 
-            index++;
+        index++;
 
-            if(index >= text.length){
+        if(index>=text.length){
+            clearInterval(timer);
+        }
 
-                clearInterval(timer);
-
-            }
-
-        },110);
+    },110);
 }
 
 
@@ -870,7 +813,7 @@ function openMemoryPage(){
 
     page3.classList.remove("active");
 
-    memoryPage.style.display = "block";
+    memoryPage.style.display="block";
 
     window.scrollTo(0,0);
 }
@@ -878,15 +821,14 @@ function openMemoryPage(){
 
 /* ================= MEMORY DATA ================= */
 
-const memories = {
+const memories={
 
-    1:{
-        title:"22-December-2025",
-        image:"photo1.jpg",
-        music:photo1Music,
+1:{
+    title:"22-December-2025",
+    image:"photo1.jpg",
+    music:photo1Music,
 
-        message:
-`Onk din kotha bolar por amader prothom meet hoyechilo ei dine.
+    message:`Onk din kotha bolar por amader prothom meet hoyechilo ei dine.
 
 Tomake bole bujhate parbo na, amar jonno oi din ta kotota special chilo. Cina nai, jana nei—amar jonno tumi hostel theke chole ascho.
 
@@ -905,16 +847,14 @@ Thik tokhoni amar tomake valo lagte shuru korechilo.
 Jani onnoder chokhe tumi kemon. But amar chokhe tomar cheye shundor nari arekta nei.
 
 U r best. ❤️`
-    },
+},
 
+2:{
+    title:"13-January-2026",
+    image:"photo2.jpg",
+    music:photo2Music,
 
-    2:{
-        title:"13-January-2026",
-        image:"photo2.jpg",
-        music:photo2Music,
-
-        message:
-`Amader ei vabe er age orokom pic tola hoyni.
+    message:`Amader ei vabe er age orokom pic tola hoyni.
 
 Ei cobita jedin tola hoyechilo, oi din tumi basay esechile, dhukte paroni. Pore amra ber hoye Agargaon giyechilam park e.
 
@@ -923,16 +863,14 @@ Ki jani ki kotha ekta niye tumi kanna kore diyechile.
 Amar khub kharap legechilo. Ami ekta manushke eto tai kosto diye felechi je se kanna porjonto kore diyeche.
 
 Tomake tokhono onek bujhaitam je amar mukh ta emon, jeta aj porjonto bujhate parini—naki bujhte chao na, jani na. ❤️`
-    },
+},
 
+3:{
+    title:"5-April-2026",
+    image:"photo3.jpg",
+    music:null,
 
-    3:{
-        title:"5-April-2026",
-        image:"photo3.jpg",
-        music:null,
-
-        message:
-`5 April er age amar khub baje ekta somoy par hoyechilo.
+    message:`5 April er age amar khub baje ekta somoy par hoyechilo.
 
 Na partechilam tomake bujhate, ar na partechilam nijeke control korte. Onk koste din par hocchilo.
 
@@ -951,16 +889,14 @@ Ato jogra, ato kichur por khub shundor ekta muhurto par hoyechilo.
 Ato valo moment par korar por hostel e dhukte na pere amake ki ki je bolechilo, ami mone korteo chai na.
 
 Tobe jay hok, always e ami tomake kosto dei shob dik theke. ❤️`
-    },
+},
 
+4:{
+    title:"23-April-2026",
+    image:"photo4.jpg",
+    music:null,
 
-    4:{
-        title:"23-April-2026",
-        image:"photo4.jpg",
-        music:null,
-
-        message:
-`Ki jani karone tumi Teknaf gele abar.
+    message:`Ki jani karone tumi Teknaf gele abar.
 
 Ami tomake meet korar jonno onek try koreo tumi meet koroni. Tokhon to amar Dhaka asar kono planning o chilo na.
 
@@ -983,7 +919,7 @@ Ei kothin kaj ta tumi always ei kore jaccho.
 Ar teke boro shotto ki jani—tumi amake na bujhei kosto pao.
 
 Ar amar kotha gulo kane newar dorkar tai ki? Kaner bahire rakho kichu somoyer jonno, dekhba ektu por shob thik hoye geche. ❤️`
-    }
+}
 
 };
 
@@ -992,170 +928,116 @@ Ar amar kotha gulo kane newar dorkar tai ki? Kaner bahire rakho kichu somoyer jo
 
 function openDetail(number){
 
-    const memory =
-        memories[number];
+    const memory=memories[number];
+
+    memoryPage.style.display="none";
+    detailPage.style.display="block";
+
+    /* আলাদা background */
+
+    detailPage.className="detail-page photo"+number+"-bg";
+
+    document.getElementById("detailTitle").textContent=memory.title;
+
+    document.getElementById("detailImage").src=memory.image;
+
+    document.getElementById("detailMessage").textContent=memory.message;
+
+    const buttonArea=document.getElementById("detailButtonArea");
+
+    buttonArea.innerHTML="";
 
     stopAllMusic();
 
-    memoryPage.style.display = "none";
 
-    detailPage.style.display = "block";
+    /* PHOTO 1 MUSIC */
 
+    if(number===1){
 
-    /* আলাদা theme */
+        photo1Music.currentTime=0;
 
-    detailPage.classList.remove(
-        "photo1-theme",
-        "photo2-theme",
-        "photo3-theme",
-        "photo4-theme"
-    );
-
-    detailPage.classList.add(
-        "photo" + number + "-theme"
-    );
-
-
-    document.getElementById("detailTitle")
-        .textContent = memory.title;
-
-
-    document.getElementById("detailImage")
-        .src = memory.image;
-
-
-    document.getElementById("detailMessage")
-        .textContent = memory.message;
-
-
-    const buttonArea =
-        document.getElementById("detailButtonArea");
-
-    buttonArea.innerHTML = "";
-
-
-    /* =================
-       PHOTO 1 / 2 MUSIC
-    ================= */
-
-    if(number === 1){
-
-        photo1Music.currentTime = 0;
-
-        photo1Music.play().catch(() => {});
+        photo1Music.play().catch(()=>{});
 
     }
 
 
-    if(number === 2){
+    /* PHOTO 2 MUSIC */
 
-        photo2Music.currentTime = 0;
+    if(number===2){
 
-        photo2Music.play().catch(() => {});
+        photo2Music.currentTime=0;
+
+        photo2Music.play().catch(()=>{});
 
     }
 
 
-    /* =================
+    /*
        PHOTO 1 → PHOTO 2
-    ================= */
-
-    if(number === 1){
-
-        createNextButton(
-            "NEXT ❤️",
-            function(){
-                openDetail(2);
-            }
-        );
-
-    }
-
-
-    /* =================
        PHOTO 2 → PHOTO 3
-    ================= */
-
-    if(number === 2){
-
-        createNextButton(
-            "NEXT ❤️",
-            function(){
-                openDetail(3);
-            }
-        );
-
-    }
-
-
-    /* =================
        PHOTO 3 → PHOTO 4
-    ================= */
+    */
 
-    if(number === 3){
+    if(number<4){
 
-        createNextButton(
-            "NEXT ❤️",
-            function(){
-                openDetail(4);
-            }
-        );
+        const nextButton=document.createElement("button");
+
+        nextButton.className="next-btn";
+
+        nextButton.textContent=
+            "NEXT → PHOTO "+(number+1);
+
+        nextButton.onclick=function(){
+
+            openDetail(number+1);
+
+        };
+
+        buttonArea.appendChild(nextButton);
 
     }
 
 
-    /* =================
+    /*
        PHOTO 4 → PAGE 5
-    ================= */
+    */
 
-    if(number === 4){
+    if(number===4){
 
-        const openButton =
-            document.createElement("button");
+        const openButton=document.createElement("button");
 
-        openButton.className =
-            "page5-open";
+        openButton.className="page5-open";
 
-        openButton.textContent =
-            "OPEN ❤️";
+        openButton.textContent="OPEN ❤️";
 
-        openButton.onclick =
-            function(){
+        openButton.onclick=function(){
 
-                openPage5();
+            openPage5();
 
-            };
+        };
 
-        buttonArea.appendChild(
-            openButton
-        );
+        buttonArea.appendChild(openButton);
 
     }
 
+
+    /* BACK BUTTON */
+
+    const backButton=document.createElement("button");
+
+    backButton.className="back-btn";
+
+    backButton.textContent="← BACK TO VIEW MEMORY";
+
+    backButton.onclick=function(){
+
+        backToMemory();
+
+    };
+
+    buttonArea.appendChild(backButton);
 
     window.scrollTo(0,0);
-}
-
-
-/* ================= NEXT BUTTON ================= */
-
-function createNextButton(text,action){
-
-    const button =
-        document.createElement("button");
-
-    button.className =
-        "next-btn";
-
-    button.textContent =
-        text;
-
-    button.onclick =
-        action;
-
-    document.getElementById(
-        "detailButtonArea"
-    ).appendChild(button);
 }
 
 
@@ -1165,19 +1047,30 @@ function openPage5(){
 
     stopAllMusic();
 
-    detailPage.style.display = "none";
+    detailPage.style.display="none";
 
-    page5.style.display = "block";
+    page5.style.display="block";
 
     window.scrollTo(0,0);
 
+    page5Music.currentTime=0;
 
-    /* Page 5 music */
+    page5Music.play().catch(()=>{});
+}
 
-    page5Music.currentTime = 0;
 
-    page5Music.play().catch(() => {});
+/* ================= BACK ================= */
 
+function backToMemory(){
+
+    stopAllMusic();
+
+    detailPage.style.display="none";
+    page5.style.display="none";
+
+    memoryPage.style.display="block";
+
+    window.scrollTo(0,0);
 }
 
 </script>
