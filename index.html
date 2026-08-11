@@ -7,61 +7,32 @@
 
 <style>
 *{
+    box-sizing:border-box;
     margin:0;
     padding:0;
-    box-sizing:border-box;
 }
 
-html,body{
-    width:100%;
-    min-height:100%;
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-    background:#09050b;
-    color:#fff;
-    font-family:Georgia,serif;
+    font-family:Georgia, "Times New Roman", serif;
+    background:#080810;
+    color:white;
     overflow-x:hidden;
 }
 
-.hidden{
-    display:none !important;
-}
-
 .page{
-    width:100%;
     min-height:100vh;
+    width:100%;
+    display:none;
     position:relative;
     overflow:hidden;
 }
 
-.center{
+.page.active{
     display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-}
-
-/* =========================
-   COMMON BACKGROUND
-========================= */
-
-.page::before,
-.memory-page::before{
-    content:"";
-    position:absolute;
-    inset:0;
-    background-image:
-    radial-gradient(circle,rgba(255,255,255,.7) 1px,transparent 1px);
-    background-size:45px 45px;
-    opacity:.14;
-    animation:stars 12s linear infinite;
-    pointer-events:none;
-}
-
-@keyframes stars{
-    from{transform:translateY(0)}
-    to{transform:translateY(-45px)}
 }
 
 /* =========================
@@ -69,100 +40,54 @@ body{
 ========================= */
 
 #page1{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     background:
-    radial-gradient(circle at center,#551d3b 0%,#210c1c 48%,#09050b 100%);
+        radial-gradient(circle at 50% 30%, rgba(255,105,180,.28), transparent 35%),
+        linear-gradient(135deg,#100812,#260d25,#090912);
 }
 
-.intro-content{
-    position:relative;
-    z-index:5;
-    opacity:0;
-    animation:introAppear 2s ease forwards;
-    animation-delay:.5s;
+.intro{
+    padding:30px;
 }
 
-.intro-heart{
-    font-size:48px;
-    margin-bottom:25px;
-    animation:heartBeat 1.5s infinite;
+.intro h1{
+    font-size:clamp(28px,8vw,58px);
+    letter-spacing:3px;
+    animation:fadeIn 2s ease forwards;
 }
 
-.intro-content h1{
-    font-size:clamp(38px,9vw,70px);
-    font-weight:normal;
-}
-
-.intro-content p{
-    margin-top:18px;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-    letter-spacing:4px;
-    color:#e8b5c7;
-}
-
-@keyframes introAppear{
-    from{
-        opacity:0;
-        transform:translateY(25px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-@keyframes heartBeat{
-    0%,100%{transform:scale(1)}
-    50%{transform:scale(1.18)}
+.intro p{
+    margin-top:20px;
+    font-size:18px;
+    opacity:.8;
 }
 
 /* =========================
-   PAGE 2
+   OPEN BUTTON
 ========================= */
 
-#page2{
-    background:
-    radial-gradient(circle at center,#632443 0%,#281020 48%,#09050b 100%);
-}
-
-.page2-content{
-    position:relative;
-    z-index:5;
-}
-
-.page2-heart{
-    font-size:42px;
-    margin-bottom:28px;
-    animation:heartBeat 1.5s infinite;
-}
-
 .open-btn{
-    padding:17px 48px;
-    border:1px solid #e7a9bd;
+    border:0;
+    padding:15px 38px;
+    margin-top:35px;
     border-radius:50px;
-    color:#fff;
-    background:transparent;
-    font-family:Arial,sans-serif;
-    font-size:14px;
-    letter-spacing:4px;
+    background:linear-gradient(135deg,#ff5c9a,#ff86b7);
+    color:white;
+    font-size:19px;
+    font-weight:bold;
     cursor:pointer;
-    box-shadow:0 0 25px rgba(230,160,185,.15);
-    animation:buttonGlow 2.5s infinite;
-    transition:.4s;
+    box-shadow:0 0 25px rgba(255,90,160,.45);
+    transition:.3s;
 }
 
 .open-btn:hover{
     transform:scale(1.06);
-    background:rgba(255,255,255,.07);
 }
 
-@keyframes buttonGlow{
-    0%,100%{
-        box-shadow:0 0 5px rgba(230,160,185,.1);
-    }
-    50%{
-        box-shadow:0 0 35px rgba(230,160,185,.35);
-    }
+.open-btn:active{
+    transform:scale(.96);
 }
 
 /* =========================
@@ -170,222 +95,124 @@ body{
 ========================= */
 
 #page3{
+    align-items:center;
+    justify-content:center;
+    text-align:center;
     background:
-    radial-gradient(circle at 50% 28%,#812c53 0%,#3a172a 45%,#0a050b 100%);
+        radial-gradient(circle at 50% 25%,rgba(255,170,205,.42),transparent 28%),
+        radial-gradient(circle at 20% 80%,rgba(180,80,150,.3),transparent 30%),
+        linear-gradient(135deg,#180817,#481633,#16091d);
+}
+
+#page3::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.7) 0 2px,transparent 3px),
+        radial-gradient(circle at 80% 30%,rgba(255,255,255,.6) 0 2px,transparent 3px),
+        radial-gradient(circle at 60% 80%,rgba(255,255,255,.5) 0 2px,transparent 3px),
+        radial-gradient(circle at 30% 65%,rgba(255,255,255,.5) 0 2px,transparent 3px);
+    background-size:220px 220px;
+    animation:stars 8s linear infinite;
+    pointer-events:none;
 }
 
 .birthday-content{
     position:relative;
-    z-index:5;
+    z-index:3;
     width:100%;
     max-width:900px;
-    padding:25px;
+    padding:30px 22px;
 }
 
 .birthday-title{
-    display:block;
-    font-size:clamp(32px,8vw,65px);
-    line-height:1.18;
-    letter-spacing:2px;
-    font-weight:normal;
+    font-size:clamp(30px,8vw,68px);
+    line-height:1.15;
+    letter-spacing:3px;
+    font-weight:bold;
+    text-shadow:0 0 25px rgba(255,160,200,.7);
 }
 
-.birthday-title.animate{
-    animation:birthdayTitle 5s ease forwards;
+.birthday-subtitle{
+    margin-top:18px;
+    font-size:clamp(24px,6vw,48px);
+    line-height:1.25;
+    font-weight:bold;
+    text-shadow:0 0 20px rgba(255,160,200,.6);
 }
 
-@keyframes birthdayTitle{
-    0%{
-        opacity:0;
-        transform:scale(.82);
-        filter:blur(10px);
-    }
-    20%{
-        opacity:1;
-        transform:scale(1);
-        filter:blur(0);
-    }
-    75%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-        transform:scale(1.04);
-    }
+.returns{
+    font-size:clamp(25px,6vw,50px);
+    line-height:1.3;
+    font-weight:bold;
+    text-shadow:0 0 20px rgba(255,160,200,.65);
 }
 
-.birthday-second{
-    display:none;
-    font-size:clamp(26px,6vw,48px);
-    line-height:1.35;
+.letter-text{
+    font-size:clamp(22px,5vw,40px);
+    line-height:1.6;
+    min-height:130px;
+    padding:10px;
+    text-shadow:0 0 18px rgba(255,160,200,.55);
 }
 
-.birthday-second.animate{
-    animation:secondText 5s ease forwards;
-}
-
-@keyframes secondText{
-    0%{
-        opacity:0;
-        transform:translateY(30px);
-        filter:blur(8px);
-    }
-    20%{
-        opacity:1;
-        transform:translateY(0);
-        filter:blur(0);
-    }
-    75%{
-        opacity:1;
-    }
-    100%{
-        opacity:0;
-    }
-}
-
-.birthday-message{
-    display:none;
-    font-size:clamp(24px,6vw,44px);
-    line-height:1.7;
-    color:#ffe8ef;
-}
-
-.letter{
-    display:inline-block;
-    opacity:0;
-    animation:letterShow .13s forwards;
-}
-
-@keyframes letterShow{
-    from{
-        opacity:0;
-        transform:translateY(10px);
-    }
-    to{
-        opacity:1;
-        transform:translateY(0);
-    }
-}
-
-.page3-open{
-    display:none;
-    margin-top:35px;
-}
-
-.page3-audio{
+.hidden-animation{
     display:none;
 }
 
-/* Floating decorations */
-
-.decoration{
-    position:absolute;
-    inset:0;
-    pointer-events:none;
+.fade-animation{
+    animation:fadeZoom 1s ease both;
 }
 
-.decoration span{
-    position:absolute;
-    font-size:23px;
-    opacity:.45;
-    animation:float 7s ease-in-out infinite;
-}
-
-.decoration span:nth-child(1){
-    left:10%;
-    top:75%;
-}
-
-.decoration span:nth-child(2){
-    left:28%;
-    top:60%;
-    animation-delay:1s;
-}
-
-.decoration span:nth-child(3){
-    left:72%;
-    top:70%;
-    animation-delay:2s;
-}
-
-.decoration span:nth-child(4){
-    left:88%;
-    top:55%;
-    animation-delay:3s;
-}
-
-@keyframes float{
-    0%{
-        transform:translateY(30px);
-        opacity:0;
-    }
-    30%{opacity:.5}
-    100%{
-        transform:translateY(-180px);
-        opacity:0;
-    }
+.letter-animation{
+    animation:letterAppear .7s ease both;
 }
 
 /* =========================
-   PAGE 4
+   MEMORY PAGE
 ========================= */
 
-#page4{
+#memoryPage{
+    display:none;
+    min-height:100vh;
+    padding:45px 18px 60px;
     background:
-    radial-gradient(circle at 50% 20%,#672544 0%,#28101f 47%,#09050b 100%);
-    padding:65px 20px 50px;
-    overflow-y:auto;
+        radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
+        linear-gradient(135deg,#100812,#271020,#0b0a13);
 }
 
-.memories-container{
-    position:relative;
-    z-index:5;
-    width:100%;
-    max-width:1050px;
-    margin:auto;
-}
-
-.memories-heading{
+.memory-title{
     text-align:center;
-    margin-bottom:45px;
+    font-size:clamp(30px,8vw,52px);
+    margin-bottom:12px;
 }
 
-.memories-heading h1{
-    font-size:clamp(30px,7vw,55px);
-    font-weight:normal;
+.memory-subtitle{
+    text-align:center;
+    opacity:.75;
+    margin-bottom:35px;
 }
 
-.memories-heading p{
-    margin-top:12px;
-    color:#ddb4c4;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-    letter-spacing:2px;
-}
-
-.photo-grid{
+.memory-grid{
+    width:100%;
+    max-width:900px;
+    margin:auto;
     display:grid;
     grid-template-columns:repeat(2,1fr);
-    gap:25px;
+    gap:22px;
 }
 
-.photo-card{
-    background:rgba(255,255,255,.055);
-    border:1px solid rgba(255,200,220,.16);
+.memory-card{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
     border-radius:22px;
-    padding:14px;
+    padding:12px;
     backdrop-filter:blur(8px);
-    box-shadow:0 15px 45px rgba(0,0,0,.25);
-    text-align:center;
-    transition:.4s;
+    box-shadow:0 12px 35px rgba(0,0,0,.3);
 }
 
-.photo-card:hover{
-    transform:translateY(-7px);
-    border-color:rgba(255,200,220,.4);
-}
-
-.photo-card img{
+.memory-card img{
     width:100%;
     aspect-ratio:1/1;
     object-fit:cover;
@@ -393,98 +220,91 @@ body{
     display:block;
 }
 
-.photo-card h2{
-    margin-top:18px;
-    font-size:20px;
-    font-weight:normal;
+.memory-card h3{
+    text-align:center;
+    margin:14px 0 10px;
+    font-size:18px;
 }
 
-.memory-btn{
-    margin-top:14px;
-    padding:11px 20px;
-    border:1px solid #d99aaf;
+.memory-card button{
+    width:100%;
+    border:0;
+    padding:12px;
     border-radius:30px;
-    color:#fff;
-    background:transparent;
-    font-family:Arial,sans-serif;
-    font-size:11px;
-    letter-spacing:2px;
+    background:linear-gradient(135deg,#ff5c9a,#ff8dbb);
+    color:white;
+    font-size:16px;
+    font-weight:bold;
     cursor:pointer;
-    transition:.3s;
-}
-
-.memory-btn:hover{
-    background:rgba(255,255,255,.08);
 }
 
 /* =========================
-   MEMORY PAGES
+   MEMORY DETAIL
 ========================= */
 
-.memory-page{
-    width:100%;
+.detail-page{
+    display:none;
     min-height:100vh;
-    position:relative;
+    padding:35px 20px 55px;
     background:
-    radial-gradient(circle at 50% 25%,#70294c 0%,#321425 45%,#09050b 100%);
-    padding:55px 20px;
-    overflow-y:auto;
+        radial-gradient(circle at 50% 10%,rgba(255,120,180,.25),transparent 30%),
+        linear-gradient(135deg,#120812,#301226,#0b0911);
 }
 
-.memory-container{
-    position:relative;
-    z-index:5;
-    width:100%;
-    max-width:800px;
+.detail-container{
+    max-width:850px;
     margin:auto;
     text-align:center;
 }
 
-.memory-photo{
-    width:min(100%,550px);
-    max-height:55vh;
+.detail-title{
+    font-size:clamp(27px,7vw,48px);
+    margin-bottom:25px;
+}
+
+.detail-image{
+    width:100%;
+    max-width:650px;
+    max-height:65vh;
     object-fit:contain;
     border-radius:22px;
-    box-shadow:0 20px 60px rgba(0,0,0,.45);
+    box-shadow:0 15px 45px rgba(0,0,0,.5);
 }
 
-.memory-title{
-    margin-top:28px;
-    font-size:clamp(27px,6vw,45px);
-    font-weight:normal;
-}
-
-.memory-text{
-    margin:25px auto 0;
-    max-width:720px;
+.detail-message{
+    margin:28px auto;
+    max-width:750px;
     text-align:left;
-    font-family:Arial,sans-serif;
-    font-size:16px;
-    line-height:2;
-    color:#f7dfe7;
+    font-size:18px;
+    line-height:1.9;
+    color:#f9eaf1;
     white-space:pre-line;
 }
 
-.memory-music{
-    display:none;
-}
-
-.back-btn,
-.page5-open{
-    margin-top:35px;
-    padding:13px 28px;
-    border:1px solid #d99aaf;
-    border-radius:30px;
-    color:#fff;
-    background:transparent;
-    font-family:Arial,sans-serif;
-    font-size:12px;
-    letter-spacing:2px;
+.back-btn{
+    display:inline-block;
+    border:0;
+    padding:13px 30px;
+    border-radius:40px;
+    background:rgba(255,255,255,.13);
+    color:white;
+    font-size:16px;
     cursor:pointer;
+    margin-top:10px;
 }
 
 .page5-open{
     display:inline-block;
+    border:0;
+    padding:16px 45px;
+    border-radius:50px;
+    background:linear-gradient(135deg,#ff4f93,#ff91bd);
+    color:white;
+    font-size:20px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:0 0 28px rgba(255,80,150,.45);
+    margin-top:10px;
 }
 
 /* =========================
@@ -492,67 +312,130 @@ body{
 ========================= */
 
 #page5{
+    min-height:100vh;
+    padding:45px 20px 70px;
     background:
-    radial-gradient(circle at 50% 20%,#812c53 0%,#351425 45%,#09050b 100%);
-    padding:60px 20px;
-    overflow-y:auto;
+        radial-gradient(circle at 50% 15%,rgba(255,150,190,.3),transparent 30%),
+        linear-gradient(135deg,#140914,#35152b,#0c0912);
 }
 
-.page5-container{
-    position:relative;
-    z-index:5;
+.final-container{
     max-width:850px;
     margin:auto;
+}
+
+.final-title{
     text-align:center;
-}
-
-.page5-container h1{
-    font-size:clamp(34px,8vw,60px);
-    font-weight:normal;
-    line-height:1.3;
+    font-size:clamp(28px,7vw,50px);
     margin-bottom:35px;
+    text-shadow:0 0 20px rgba(255,150,200,.5);
 }
 
-.page5-message{
-    text-align:left;
-    font-family:Arial,sans-serif;
-    font-size:17px;
-    line-height:2.1;
-    color:#f8e1e8;
+.final-message{
+    background:rgba(255,255,255,.07);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:24px;
+    padding:28px 22px;
+    font-size:18px;
+    line-height:2;
     white-space:pre-line;
+    box-shadow:0 15px 40px rgba(0,0,0,.3);
 }
 
-.page5-audio{
-    display:none;
+.final-back{
+    display:block;
+    width:max-content;
+    margin:30px auto 0;
+    padding:13px 30px;
+    border:0;
+    border-radius:40px;
+    background:rgba(255,255,255,.13);
+    color:white;
+    font-size:16px;
 }
 
 /* =========================
-   MOBILE
+   FLOATING HEARTS
 ========================= */
 
-@media(max-width:650px){
+.heart{
+    position:absolute;
+    bottom:-50px;
+    font-size:22px;
+    opacity:.7;
+    animation:floatHeart linear infinite;
+    pointer-events:none;
+}
 
-    .photo-grid{
+.h1{left:10%;animation-duration:8s}
+.h2{left:28%;animation-duration:11s;animation-delay:2s}
+.h3{left:52%;animation-duration:9s;animation-delay:1s}
+.h4{left:74%;animation-duration:12s;animation-delay:3s}
+.h5{left:90%;animation-duration:10s;animation-delay:1s}
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fadeIn{
+    from{opacity:0;transform:translateY(20px)}
+    to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeZoom{
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@keyframes letterAppear{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+@keyframes stars{
+    from{transform:translateY(0)}
+    to{transform:translateY(-60px)}
+}
+
+@keyframes floatHeart{
+    0%{
+        transform:translateY(0) scale(.7);
+        opacity:0;
+    }
+    15%{opacity:.8}
+    100%{
+        transform:translateY(-115vh) scale(1.2) rotate(20deg);
+        opacity:0;
+    }
+}
+
+@media(max-width:600px){
+    .memory-grid{
         grid-template-columns:1fr;
     }
 
-    #page4{
-        padding-top:50px;
-    }
-
-    .photo-card{
+    .memory-card{
         max-width:430px;
         margin:auto;
+        width:100%;
     }
 
-    .memory-text{
-        font-size:15px;
-        line-height:1.9;
-    }
-
-    .page5-message{
-        font-size:15px;
-        line-height:2;
+    .detail-message,
+    .final-message{
+        font-size:17px;
+        line-height:1.85;
     }
 }
 </style>
@@ -560,38 +443,20 @@ body{
 
 <body>
 
-
 <!-- =========================
      PAGE 1
 ========================= -->
 
-<section id="page1" class="page center">
+<section id="page1" class="page active">
 
-    <div class="intro-content">
+    <div class="intro">
 
-        <div class="intro-heart">❤️</div>
+        <h1>Hey Sabu ❤️</h1>
 
-        <h1>Hey Sabu,</h1>
+        <p>This is something special, just for you.</p>
 
-        <p>This is for you.</p>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     PAGE 2
-========================= -->
-
-<section id="page2" class="page center hidden">
-
-    <div class="page2-content">
-
-        <div class="page2-heart">♡</div>
-
-        <button class="open-btn" onclick="openBirthdayPage()">
-            OPEN
+        <button class="open-btn" onclick="goToPage3()">
+            OPEN ❤️
         </button>
 
     </div>
@@ -603,188 +468,57 @@ body{
      PAGE 3
 ========================= -->
 
-<section id="page3" class="page center hidden">
+<section id="page3" class="page">
 
-    <div class="decoration">
-        <span>❤️</span>
-        <span>✨</span>
-        <span>♡</span>
-        <span>🎂</span>
-    </div>
+    <div class="heart h1">❤️</div>
+    <div class="heart h2">💗</div>
+    <div class="heart h3">💕</div>
+    <div class="heart h4">❤️</div>
+    <div class="heart h5">💖</div>
 
     <div class="birthday-content">
 
-        <div id="birthdayTitle" class="birthday-title">
-            HAPPY BIRTHDAY<br>
-            MY DEAR BEAUTIFUL WIFE. 🥰
-        </div>
+        <!-- 1st 5 seconds -->
+        <div id="birthdayFirst">
 
-        <div id="birthdaySecond" class="birthday-second">
-            MANY MANY HAPPY RETURNS OF THE DAY. ❤️
-        </div>
-
-        <div id="birthdayMessage" class="birthday-message">
-            তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে🥰
-        </div>
-    
-
-        <button id="page3Open"
-                class="open-btn page3-open"
-                onclick="openMemoriesPage()">
-            OPEN ❤️
-        </button>
-
-    </div>
-
-    <audio id="birthdayMusic"
-           class="page3-audio"
-           preload="auto">
-        <source src="birthday.mp3" type="audio/mpeg">
-    </audio>
-
-</section>
-
-
-<!-- =========================
-     PAGE 4
-========================= -->
-
-<section id="page4" class="page hidden">
-
-    <div class="memories-container">
-
-        <div class="memories-heading">
-
-            <h1>Our Memories ❤️</h1>
-
-            <p>SOME MOMENTS I WILL ALWAYS KEEP</p>
-
-        </div>
-
-        <div class="photo-grid">
-
-            <!-- PHOTO 1 -->
-
-            <div class="photo-card">
-
-                <img src="photo1.jpg"
-                     alt="22 December 2025">
-
-                <h2>22 December 2025</h2>
-
-                <button class="memory-btn"
-                        onclick="openMemory(1)">
-                    VIEW MEMORY
-                </button>
-
+            <div class="birthday-title">
+                HAPPY BIRTHDAY
             </div>
 
-
-            <!-- PHOTO 2 -->
-
-            <div class="photo-card">
-
-                <img src="photo2.jpg"
-                     alt="13 January 2026">
-
-                <h2>13 January 2026</h2>
-
-                <button class="memory-btn"
-                        onclick="openMemory(2)">
-                    VIEW MEMORY
-                </button>
-
-            </div>
-
-
-            <!-- PHOTO 3 -->
-
-            <div class="photo-card">
-
-                <img src="photo3.jpg"
-                     alt="5 April 2026">
-
-                <h2>5 April 2026</h2>
-
-                <button class="memory-btn"
-                        onclick="openMemory(3)">
-                    VIEW MEMORY
-                </button>
-
-            </div>
-
-
-            <!-- PHOTO 4 -->
-
-            <div class="photo-card">
-
-                <img src="photo4.jpg"
-                     alt="23 April 2026">
-
-                <h2>23 April 2026</h2>
-
-                <button class="memory-btn"
-                        onclick="openMemory(4)">
-                    VIEW MEMORY
-                </button>
-
+            <div class="birthday-subtitle">
+                MY DEAR BEAUTIFUL WIFE. 🥰
             </div>
 
         </div>
 
-    </div>
 
-</section>
+        <!-- Next 5 seconds -->
+        <div id="birthdaySecond" class="hidden-animation">
 
+            <div class="returns">
+                MANY MANY HAPPY RETURNS<br>
+                OF THE DAY. ❤️
+            </div>
 
-<!-- =========================
-     MEMORY 1
-========================= -->
-
-<section id="memory1" class="memory-page hidden">
-
-    <div class="memory-container">
-
-        <img src="photo1.jpg"
-             class="memory-photo"
-             alt="22 December 2025">
-
-        <h1 class="memory-title">
-            22 December 2025
-        </h1>
-
-        <div class="memory-text">
-অনেক দিন কথা বলার পর আমাদের প্রথম meet হয়েছিল এই দিনে।
-
-তোমাকে বলে বোঝাতে পারব না আমার জন্য ওই দিনটা কতটা special ছিল। চেনা নেই, জানা নেই—আমার জন্য তুমি hostel থেকে চলে আসছো। আমি চেয়েছিলাম তোমার সব request রাখতে। জানি না ওই দিন পেরেছিলাম কি না।
-
-তোমার অনেক কিছু দেখার ইচ্ছে ছিল। দেখাতে পেরেছিলাম কি না।
-
-চাচ্ছিলাম আমার জন্য না হোক তোমার জন্য দিনটা special করার জন্য।
-
-আমি কী যে কষ্টে ছিলাম একমাত্র আমি জানি আর উপরওয়ালা।
-
-তোমাকে আমার বিষয়গুলো share করতে চাচ্ছিলাম না। ভেবেছিলাম হুদাই নিজের কষ্টগুলো অন্যজনকে বলে তাকে কষ্ট দিয়ে কী হবে।
-
-পরে না পেরে বলে ফেললাম আর আমি এমন একটা মানুষ—আমার কথাগুলো খুব মন দিয়ে শুনেছো আর বোঝারও try করেছো। এমনকি আমার কষ্টগুলো নিজের মনে করেছো।
-
-ঠিক তখনই আমার তোমাকে ভালো লাগতে শুরু করেছিল।
-
-জানি অন্যদের চোখে তুমি কেমন। But আমার চোখে তোমার চেয়ে সুন্দর নারী আরেকটা নেই।
-
-U R BEST. ❤️
         </div>
 
-        <audio id="photo1Music"
-               class="memory-music"
-               preload="auto">
-            <source src="photo1.mp3" type="audio/mpeg">
-        </audio>
 
-        <button class="back-btn"
-                onclick="backToMemories()">
-            ← BACK TO MEMORIES
-        </button>
+        <!-- Letter animation -->
+        <div id="birthdayThird" class="hidden-animation">
+
+            <div id="letterText" class="letter-text"></div>
+
+        </div>
+
+
+        <!-- Open after music -->
+        <div id="birthdayOpen" class="hidden-animation">
+
+            <button class="open-btn" onclick="openMemoryPage()">
+                OPEN ❤️
+            </button>
+
+        </div>
 
     </div>
 
@@ -792,41 +526,71 @@ U R BEST. ❤️
 
 
 <!-- =========================
-     MEMORY 2
+     PAGE 4 / MEMORY
 ========================= -->
 
-<section id="memory2" class="memory-page hidden">
+<section id="memoryPage">
 
-    <div class="memory-container">
+    <h1 class="memory-title">
+        Our Beautiful Memories ❤️
+    </h1>
 
-        <img src="photo2.jpg"
-             class="memory-photo"
-             alt="13 January 2026">
+    <p class="memory-subtitle">
+        Some moments that will always stay special.
+    </p>
 
-        <h1 class="memory-title">
-            13 January 2026
-        </h1>
+    <div class="memory-grid">
 
-        <div class="memory-text">
-আমাদের এভাবে এর আগে এরকম pic তোলা হয়নি। এই ছবিটা যেদিন তোলা হয়েছিল ওই দিন তুমি বাসায় এসেছিলে ঢুকতে পারোনি। পরে আমরা বের হয়ে Agargaon গিয়ে park-এ গিয়েছিলাম।
+        <div class="memory-card">
 
-কী জানি কী কথা একটা নিয়ে তুমি কান্না করে দিয়েছিলে।
+            <img src="photo1.jpg" alt="Photo 1">
 
-আমার খুব খারাপ লেগেছিল। আমি একটা মানুষকে এতটাই কষ্ট দিয়ে ফেলেছি যে সে কান্না পর্যন্ত করে দিয়েছে।
+            <h3>22-December-2025</h3>
 
-তোমাকে তখনও অনেক বুঝাতাম যে আমার মুখটা এমন যেটা আজ পর্যন্ত বোঝাতে পারিনি নাকি বুঝতে চাও না জানি না।
+            <button onclick="openDetail(1)">
+                VIEW MEMORY ❤️
+            </button>
+
         </div>
 
-        <audio id="photo2Music"
-               class="memory-music"
-               preload="auto">
-            <source src="photo2.mp3" type="audio/mpeg">
-        </audio>
 
-        <button class="back-btn"
-                onclick="backToMemories()">
-            ← BACK TO MEMORIES
-        </button>
+        <div class="memory-card">
+
+            <img src="photo2.jpg" alt="Photo 2">
+
+            <h3>13-January-2026</h3>
+
+            <button onclick="openDetail(2)">
+                VIEW MEMORY ❤️
+            </button>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <img src="photo3.jpg" alt="Photo 3">
+
+            <h3>5-April-2026</h3>
+
+            <button onclick="openDetail(3)">
+                VIEW MEMORY ❤️
+            </button>
+
+        </div>
+
+
+        <div class="memory-card">
+
+            <img src="photo4.jpg" alt="Photo 4">
+
+            <h3>23-April-2026</h3>
+
+            <button onclick="openDetail(4)">
+                VIEW MEMORY ❤️
+            </button>
+
+        </div>
 
     </div>
 
@@ -834,90 +598,20 @@ U R BEST. ❤️
 
 
 <!-- =========================
-     MEMORY 3
+     DETAIL PAGE
 ========================= -->
 
-<section id="memory3" class="memory-page hidden">
+<section id="detailPage" class="detail-page">
 
-    <div class="memory-container">
+    <div class="detail-container">
 
-        <img src="photo3.jpg"
-             class="memory-photo"
-             alt="5 April 2026">
+        <h1 id="detailTitle" class="detail-title"></h1>
 
-        <h1 class="memory-title">
-            5 April 2026
-        </h1>
+        <img id="detailImage" class="detail-image" src="" alt="Memory">
 
-        <div class="memory-text">
-5 April-এর আগে আমার খুব বাজে একটা সময় পার হয়েছিল। না পারছিলাম তোমাকে বোঝাতে আর না পারছিলাম নিজেকে control করতে।
+        <div id="detailMessage" class="detail-message"></div>
 
-অনেক কষ্টে দিন পার হচ্ছিল। প্রতিদিন একটা বিষয় নিয়ে ঝগড়া হতো। আমার দিকটা কতভাবে বোঝানোর চেষ্টা করেছি but বোঝাতে পারিনি।
-
-আমার কাছে তখন টাকাও ছিল না যে আমি Dhaka যাব। দুই দিন কথা না হওয়ার পর 5 তারিখে আমাকে বললে তুমি Cox's Bazar চলে আসছো শুধু আমার জন্য।
-
-একটা মানুষ কীভাবে আরেকটা মানুষের জন্য এতটা কষ্ট করতে পারে। খুব অবাক হয়েছিলাম ওই দিন।
-
-হাতে টাকা ছিল না দাঁড়িয়ে চলে গেলাম Cox's Bazar।
-
-এত ঝগড়া এত কিছুর পর খুব সুন্দর একটা মুহূর্ত পার হয়েছিল।
-
-এত ভালো moment পার করার পর Hostel-এ ঢুকতে না পেরে আমাকে কী কী যে বলেছিলে আমি মনে করতে চাই না।
-
-তবে যাই হোক always-ই আমি তোমাকে কষ্ট দিই সব দিক থেকে।
-        </div>
-
-        <button class="back-btn"
-                onclick="backToMemories()">
-            ← BACK TO MEMORIES
-        </button>
-
-    </div>
-
-</section>
-
-
-<!-- =========================
-     MEMORY 4
-========================= -->
-
-<section id="memory4" class="memory-page hidden">
-
-    <div class="memory-container">
-
-        <img src="photo4.jpg"
-             class="memory-photo"
-             alt="23 April 2026">
-
-        <h1 class="memory-title">
-            23 April 2026
-        </h1>
-
-        <div class="memory-text">
-কী জানি কারণে তুমি Teknaf গেলে আবার।
-
-আমি তোমাকে meet করার জন্য অনেক try করেও তুমি meet করোনি। তখন তো আমার Dhaka আসার কোনো planning-ও ছিল না।
-
-আবার ঝগড়া আবার কথা হচ্ছিল না। তুমি তোমার মতো চলে যাচ্ছো। তার একদিন আগেই আমি ticket নিয়ে রেখেছিলাম Dhaka একসাথে যাওয়ার গাড়িতে। গিয়ে surprise দিলাম।
-
-আমাদের প্রথম কোনো movie দেখা একসাথে।
-
-Hall-এ ঢোকার আগে কত কথা শুনিয়েছি আমি।
-
-সত্যি কথা বলতে আমি তোমাকে অনেক কষ্ট দিই আর তুমি সহ্য করেই যাচ্ছো।
-
-আসলে আমাকে সহ্য করা অনেক কঠিন।
-
-এই কঠিন কাজটা তুমি always-ই করে যাচ্ছো।
-
-আর থেকে বড় সত্য কী জানি—তুমি আমাকে না বুঝেই কষ্ট পাও।
-আর আমার কথাগুলো কানে নেওয়ার দরকার তাই কি কান-এর বাইরে রাখবা কিছু সময়ের জন্য। দেখবা একটু পর সব ঠিক হয়ে গেছে। ❤️
-        </div>
-
-        <button class="page5-open"
-                onclick="openPage5()">
-            OPEN ❤️
-        </button>
+        <div id="detailButtonArea"></div>
 
     </div>
 
@@ -928,35 +622,54 @@ Hall-এ ঢোকার আগে কত কথা শুনিয়েছি 
      PAGE 5
 ========================= -->
 
-<section id="page5" class="page hidden">
+<section id="page5">
 
-    <div class="page5-container">
+    <div class="final-container">
 
-        <h1>
+        <h1 class="final-title">
             শুভ জন্মদিন প্রিয় ❤️
         </h1>
 
-        <div class="page5-message">
-জীবনের তাগদির এগিয়ে যাওয়া এইপথ। মৃত্যুর সন্নিকটে আরেক ধাপ এগিয়ে। আজ থেকে শুরু হোক তোমার প্রতিটা ভোর নিজের সাথে ভালবাসা নিয়ে। তোমার চাওয়াগুলো ভালবাসার হোক। এমন কিছু প্রত্যাশা করিও না! যেটা না পেলে তোমাকে ভিষণ ভাবে ভেঙ্গে পরতে হবে।
+        <div class="final-message">
+জীবনের তাগদির এগিয়ে যাওয়া এই পথ। মৃত্যুর সন্নিকটে আরেক ধাপ এগিয়ে। আজ থেকে শুরু হোক তোমার প্রতিটি ভোর নিজের সাথে ভালোবাসা নিয়ে। তোমার চাওয়াগুলো ভালোবাসার হোক। এমন কিছু প্রত্যাশা করিও না! যেটা না পেলে তোমাকে ভীষণভাবে ভেঙে পড়তে হবে।
 
-সবসময় মনে রাখবে তোমার কাছে যা আছে সেটাই তোমার । তুমি আরোও উদার হও, নিজেকে আরোও জাগ্রত করো।
+সবসময় মনে রাখবে, তোমার কাছে যা আছে সেটাই তোমার। তুমি আরও উদার হও, নিজেকে আরও জাগ্রত করো।
 
-কারণে অকারণেই তোমার হাসিমুখটা অটুট রেখে নিজস্ব ভালবাসা নিয়ে ভরিও নিও নিজেকে, মনে রেখো নিজস্ব ভালবাসায় কোন হারানোর গল্প নেই বরং রয়েছে সুখের সমাপ্তি। বড্ড এলোমেলো হয়ে গেছো তুমি, নিজেকেও তো মাঝে মাঝে সময় দিতে পারো।
+কারণে অকারণেই তোমার হাসিমুখটা অটুট রেখে নিজস্ব ভালোবাসা নিয়ে ভরিয়ে নিও নিজেকে। মনে রেখো, নিজস্ব ভালোবাসায় কোনো হারানোর গল্প নেই, বরং রয়েছে সুখের সমাপ্তি। বড্ড এলোমেলো হয়ে গেছো তুমি, নিজেকেও তো মাঝে মাঝে সময় দিতে পারো।
 
-তোমার এই শুভ দিনে তোমার পথচলা হোক তোমার মতন করে আনন্দের সাথে সুন্দর, জীবনের প্রত্যেকটা মুহুর্তের পরিসমাপ্তি ঘটুক হাসি মুখ নিয়ে, তোমার এই উজ্জ্বল হাসিটা কারণে হোক বা অকারণে অটল থাকোক এটাই কামনাই করি।
+তোমার এই শুভ দিনে তোমার পথচলা হোক তোমার মতন করে আনন্দের সাথে সুন্দর। জীবনের প্রত্যেকটা মুহূর্তের পরিসমাপ্তি ঘটুক হাসিমুখ নিয়ে। তোমার এই উজ্জ্বল হাসিটা কারণে হোক বা অকারণে অটুট থাকোক—এটাই কামনা করি।
 
-আর সেই সাথে প্রার্থনা করি আমাদের এই পথ চলা যেনও শেষ নিঃশ্বাস ত্যাগ হওয়ার আগ পর্যন্ত দুনিয়ার কোন শক্তিতে ভেঙে না যায়। অনেক অনেক ভালোবাসি তোমায় অনেক বেশি। ❤️
+আর সেই সাথে প্রার্থনা করি, আমাদের এই পথ চলা যেনও শেষ নিঃশ্বাস ত্যাগ হওয়ার আগ পর্যন্ত দুনিয়ার কোনো শক্তিতে ভেঙে না যায়।
+
+অনেক অনেক ভালোবাসি তোমায়। অনেক বেশি। ❤️
         </div>
 
-        <audio id="page5Music"
-               class="page5-audio"
-               preload="auto">
-            <source src="page5.mp3" type="audio/mpeg">
-        </audio>
+        <button class="final-back" onclick="backToMemory()">
+            ← BACK TO VIEW MEMORY
+        </button>
 
     </div>
 
 </section>
+
+
+<!-- AUDIO -->
+
+<audio id="birthdayMusic" preload="auto">
+    <source src="birthday.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="photo1Music" preload="auto">
+    <source src="photo1.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="photo2Music" preload="auto">
+    <source src="photo2.mp3" type="audio/mpeg">
+</audio>
+
+<audio id="page5Music" preload="auto">
+    <source src="page5.mp3" type="audio/mpeg">
+</audio>
 
 
 <script>
@@ -965,363 +678,477 @@ Hall-এ ঢোকার আগে কত কথা শুনিয়েছি 
    PAGE CONTROL
 ========================= */
 
-let page3Timer;
-let currentAudio = null;
+const page1 = document.getElementById("page1");
+const page3 = document.getElementById("page3");
+const memoryPage = document.getElementById("memoryPage");
+const detailPage = document.getElementById("detailPage");
+const page5 = document.getElementById("page5");
+
+const birthdayMusic = document.getElementById("birthdayMusic");
+const photo1Music = document.getElementById("photo1Music");
+const photo2Music = document.getElementById("photo2Music");
+const page5Music = document.getElementById("page5Music");
+
 
 function hideAllPages(){
 
-    document.querySelectorAll(
-        ".page, .memory-page"
-    ).forEach(function(page){
+    page1.classList.remove("active");
+    page3.classList.remove("active");
 
-        page.classList.add("hidden");
-
-    });
-
-    stopAllMusic();
+    memoryPage.style.display = "none";
+    detailPage.style.display = "none";
+    page5.style.display = "none";
 }
 
-
-/* =========================
-   STOP ALL MUSIC
-========================= */
 
 function stopAllMusic(){
 
-    document.querySelectorAll("audio").forEach(function(audio){
+    birthdayMusic.pause();
+    birthdayMusic.currentTime = 0;
 
-        audio.pause();
-        audio.currentTime = 0;
+    photo1Music.pause();
+    photo1Music.currentTime = 0;
 
-    });
+    photo2Music.pause();
+    photo2Music.currentTime = 0;
 
-    currentAudio = null;
+    page5Music.pause();
+    page5Music.currentTime = 0;
 }
 
 
 /* =========================
-   PAGE 1 → PAGE 2
+   PAGE 3
 ========================= */
 
-setTimeout(function(){
-
-    document.getElementById("page1")
-        .classList.add("hidden");
-
-    document.getElementById("page2")
-        .classList.remove("hidden");
-
-},5000);
-
-
-/* =========================
-   PAGE 2 → PAGE 3
-========================= */
-
-function openBirthdayPage(){
+function goToPage3(){
 
     hideAllPages();
+    stopAllMusic();
 
-    document.getElementById("page3")
-        .classList.remove("hidden");
+    page3.classList.add("active");
 
     startBirthdayAnimation();
-
 }
 
-
-/* =========================
-   PAGE 3 ANIMATION + MUSIC
-========================= */
 
 function startBirthdayAnimation(){
 
-    const title =
-        document.getElementById("birthdayTitle");
+    const first = document.getElementById("birthdayFirst");
+    const second = document.getElementById("birthdaySecond");
+    const third = document.getElementById("birthdayThird");
+    const open = document.getElementById("birthdayOpen");
 
-    const second =
-        document.getElementById("birthdaySecond");
+    first.style.display = "block";
+    second.style.display = "none";
+    third.style.display = "none";
+    open.style.display = "none";
 
-    const message =
-        document.getElementById("birthdayMessage");
+    /*
+       Birthday music starts here.
+       User has already tapped OPEN, so browser
+       is more likely to allow playback.
+    */
 
-    const openButton =
-        document.getElementById("page3Open");
+    birthdayMusic.currentTime = 0;
 
-    const music =
-        document.getElementById("birthdayMusic");
-
-
-    clearTimeout(page3Timer);
-
-    title.style.display="block";
-    second.style.display="none";
-    message.style.display="none";
-    openButton.style.display="none";
-
-
-    /* First 5 seconds */
-
-    title.classList.remove("animate");
-
-    void title.offsetWidth;
-
-    title.classList.add("animate");
-
-
-    /* Start Page 3 music */
-
-    currentAudio = music;
-
-    music.currentTime = 0;
-
-    music.play().catch(function(){
-
-        /* Browser autoplay fallback */
-
+    birthdayMusic.play().catch(() => {
+        /*
+           If browser blocks autoplay, the animation
+           still continues.
+        */
     });
 
 
-    /* Second 5 seconds */
+    /* FIRST 5 SECONDS */
 
-    setTimeout(function(){
+    setTimeout(() => {
 
-        title.style.display="none";
+        first.style.display = "none";
 
-        second.style.display="block";
-
-        second.classList.remove("animate");
-
-        void second.offsetWidth;
-
-        second.classList.add("animate");
+        second.style.display = "block";
+        second.classList.add("fade-animation");
 
     },5000);
 
 
-    /* Letter by letter */
+    /* SECOND 5 SECONDS */
 
-    setTimeout(function(){
+    setTimeout(() => {
 
-        second.style.display="none";
+        second.style.display = "none";
 
-        createLetterAnimation(
-            message,
-            "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️"
-        );
+        third.style.display = "block";
+        third.classList.add("letter-animation");
 
-        message.style.display="block";
+        typeLetter();
 
     },10000);
 
 
     /*
-       Music শেষ হলে OPEN button.
-       যদি music file ঠিকমতো load হয়,
-       গান শেষ হওয়ার event ব্যবহার হবে।
+       When music finishes,
+       OPEN button will appear.
     */
 
-    music.onended = function(){
+    birthdayMusic.onended = function(){
 
-        message.style.display="none";
-
-        openButton.style.display="inline-block";
+        open.style.display = "block";
+        open.classList.add("fade-animation");
 
     };
 
+}
 
-    /*
-       Music load না হলে fallback timing.
-    */
 
-    page3Timer = setTimeout(function(){
+/* =========================
+   LETTER BY LETTER
+========================= */
 
-        if(
-            !music.duration ||
-            !isFinite(music.duration)
-        ){
+function typeLetter(){
 
-            message.style.display="none";
+    const text =
+    "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
 
-            openButton.style.display="inline-block";
+    const element =
+    document.getElementById("letterText");
+
+    element.textContent = "";
+
+    let index = 0;
+
+    const timer = setInterval(() => {
+
+        element.textContent += text.charAt(index);
+
+        index++;
+
+        if(index >= text.length){
+
+            clearInterval(timer);
 
         }
 
-    },20000);
+    },110);
 
 }
 
 
-/* =========================
-   LETTER ANIMATION
-========================= */
+/*
+   If birthday.mp3 is very short or has an issue,
+   show OPEN after a reasonable fallback time.
+*/
 
-function createLetterAnimation(element,text){
+setTimeout(() => {
 
-    element.innerHTML="";
+    const open = document.getElementById("birthdayOpen");
 
-    [...text].forEach(function(letter,index){
+    if(page3.classList.contains("active") &&
+       open.style.display === "none"){
 
-        const span =
-            document.createElement("span");
+        open.style.display = "block";
+        open.classList.add("fade-animation");
 
-        span.className="letter";
+    }
 
-        span.textContent=letter;
-
-        span.style.animationDelay =
-            (index * 0.08)+"s";
-
-        element.appendChild(span);
-
-    });
-
-}
+},60000);
 
 
 /* =========================
-   PAGE 3 → PAGE 4
+   MEMORY PAGE
 ========================= */
 
-function openMemoriesPage(){
+function openMemoryPage(){
 
-    hideAllPages();
+    stopAllMusic();
 
-    document.getElementById("page4")
-        .classList.remove("hidden");
+    page3.classList.remove("active");
+
+    memoryPage.style.display = "block";
 
     window.scrollTo(0,0);
-
 }
 
 
 /* =========================
-   PAGE 4 → MEMORY
+   MEMORY DATA
 ========================= */
 
-function openMemory(number){
+const memories = {
 
-    hideAllPages();
+    1:{
+        title:"22-December-2025",
+        image:"photo1.jpg",
+        music:photo1Music,
 
-    const page =
-        document.getElementById(
-            "memory"+number
-        );
+        message:
+`Onk din kotha bolar por amader prothom meet hoyechilo ei dine.
 
-    page.classList.remove("hidden");
+Tomake bole bujhate parbo na, amar jonno oi din ta kotota special chilo. Cina nai, jana nei—amar jonno tumi hostel theke chole ascho.
 
-    window.scrollTo(0,0);
+Ami cheyechilam tomar shob request rakhte. Jani na oi din perechi ki na. Tomar onek kichu dekhar icche chilo. Dekhate perechilam kina jani na.
+
+Chaichilam amar jonno na hok, tomar jonno dinta special korte.
+
+Ami ki je koshte chilam, ekmatro ami jani ar uporwala janen.
+
+Tomake amar bishoy gulo share korte chaichilam na. Vebechilam, hudai nijer kosto gulo onno jonke bole take kosto diye ki hobe.
+
+Pore na pere bole fellam. Ar ami emon ekta manush—amar kotha gulo khub mon diye shunecho ar bujhar o try korecho. Emonki amar kosto gulo nijer mone korecho.
+
+Thik tokhoni amar tomake valo lagte shuru korechilo.
+
+Jani onnoder chokhe tumi kemon. But amar chokhe tomar cheye shundor nari arekta nei.
+
+U r best. ❤️`
+    },
 
 
-    /* Photo 1 music */
+    2:{
+        title:"13-January-2026",
+        image:"photo2.jpg",
+        music:photo2Music,
 
-    if(number === 1){
+        message:
+`Amader ei vabe er age orokom pic tola hoyni.
 
-        playMemoryMusic("photo1Music");
+Ei cobita jedin tola hoyechilo, oi din tumi basay esechile, dhukte paroni. Pore amra ber hoye Agargaon giyechilam park e.
+
+Ki jani ki kotha ekta niye tumi kanna kore diyechile.
+
+Amar khub kharap legechilo. Ami ekta manushke eto tai kosto diye felechi je se kanna porjonto kore diyeche.
+
+Tomake tokhono onek bujhaitam je amar mukh ta emon, jeta aj porjonto bujhate parini—naki bujhte chao na, jani na. ❤️`
+    },
+
+
+    3:{
+        title:"5-April-2026",
+        image:"photo3.jpg",
+        music:null,
+
+        message:
+`5 April er age amar khub baje ekta somoy par hoyechilo.
+
+Na partechilam tomake bujhate, ar na partechilam nijeke control korte. Onk koste din par hocchilo.
+
+Protidin ekta bishoy niye jogra hoto. Amar dik ta koto vabe bujhanor chesta korechi, but bujhate parini.
+
+Amar kache tokhon taka o chilo na je ami Dhaka jabo.
+
+Dui din kotha na howar por 5 tarikhe amake bolle tumi Cox's Bazar chole ascho shudhu amar jonno.
+
+Ekta manush kivabe arekta manusher jonno eto ta kosto korte pare—khub obak hoyechilam oi din.
+
+Hate taka chilo na, dar kore chole gelam Cox's Bazar.
+
+Ato jogra, ato kichur por khub shundor ekta muhurto par hoyechilo.
+
+Ato valo moment par korar por hostel e dhukte na pere amake ki ki je bolechilo, ami mone korteo chai na.
+
+Tobe jay hok, always e ami tomake kosto dei shob dik theke. ❤️`
+    },
+
+
+    4:{
+        title:"23-April-2026",
+        image:"photo4.jpg",
+        music:null,
+
+        message:
+`Ki jani karone tumi Teknaf gele abar.
+
+Ami tomake meet korar jonno onek try koreo tumi meet koroni. Tokhon to amar Dhaka asar kono planning o chilo na.
+
+Abar jogra, abar kotha hocchilo na.
+
+Tumi tomar moto chole jaccho. Tar ekdin agei ami ticket niye rekhechilam Dhaka ek sathe jawar garite.
+
+Giye surprise dilam.
+
+Amader prothom kono movie dekha ek sathe.
+
+Hall e dhukar age koto kotha sunaichi ami.
+
+Sotti kotha bolte, ami tomake onek kosto dei ar tumi sojjo korei jaccho.
+
+Asole amake sojjo kora onek kothin.
+
+Ei kothin kaj ta tumi always ei kore jaccho.
+
+Ar teke boro shotto ki jani—tumi amake na bujhei kosto pao.
+
+Ar amar kotha gulo kane newar dorkar tai ki? Kaner bahire rakho kichu somoyer jonno, dekhba ektu por shob thik hoye geche. ❤️`
+    }
+
+};
+
+
+/* =========================
+   OPEN MEMORY DETAIL
+========================= */
+
+function openDetail(number){
+
+    const memory = memories[number];
+
+    memoryPage.style.display = "none";
+    detailPage.style.display = "block";
+
+    document.getElementById("detailTitle").textContent =
+        memory.title;
+
+    document.getElementById("detailImage").src =
+        memory.image;
+
+    document.getElementById("detailMessage").textContent =
+        memory.message;
+
+
+    const buttonArea =
+        document.getElementById("detailButtonArea");
+
+    buttonArea.innerHTML = "";
+
+    stopAllMusic();
+
+
+    /*
+       Photo 1 music
+    */
+
+    if(number === 1 && memory.music){
+
+        memory.music.currentTime = 0;
+
+        memory.music.play().catch(() => {});
 
     }
 
 
-    /* Photo 2 music */
+    /*
+       Photo 2 music
+    */
 
-    if(number === 2){
+    if(number === 2 && memory.music){
 
-        playMemoryMusic("photo2Music");
+        memory.music.currentTime = 0;
 
-    }
-
-
-    /* Photo 3 → NO MUSIC */
-
-    if(number === 3){
-
-        stopAllMusic();
+        memory.music.play().catch(() => {});
 
     }
 
 
-    /* Photo 4 → NO MUSIC */
+    /*
+       PHOTO 4:
+       Instead of BACK TO VIEW MEMORY,
+       show OPEN button for Page 5.
+    */
 
     if(number === 4){
 
-        stopAllMusic();
+        const openButton =
+            document.createElement("button");
+
+        openButton.className = "page5-open";
+
+        openButton.textContent = "OPEN ❤️";
+
+        openButton.onclick = function(){
+
+            openPage5();
+
+        };
+
+        buttonArea.appendChild(openButton);
 
     }
 
+    else{
+
+        const backButton =
+            document.createElement("button");
+
+        backButton.className = "back-btn";
+
+        backButton.textContent =
+            "← BACK TO VIEW MEMORY";
+
+        backButton.onclick = function(){
+
+            backToMemory();
+
+        };
+
+        buttonArea.appendChild(backButton);
+
+    }
+
+    window.scrollTo(0,0);
 }
 
 
 /* =========================
-   MEMORY MUSIC
-========================= */
-
-function playMemoryMusic(id){
-
-    const music =
-        document.getElementById(id);
-
-    if(!music) return;
-
-    currentAudio = music;
-
-    music.currentTime=0;
-
-    music.play().catch(function(){
-
-        /*
-        কিছু browser user interaction-এর
-        কারণে autoplay block করতে পারে।
-        */
-
-    });
-
-}
-
-
-/* =========================
-   PHOTO 4 → PAGE 5
+   PAGE 5
 ========================= */
 
 function openPage5(){
 
-    hideAllPages();
+    stopAllMusic();
 
-    document.getElementById("page5")
-        .classList.remove("hidden");
+    detailPage.style.display = "none";
+
+    page5.style.display = "block";
 
     window.scrollTo(0,0);
 
+    /*
+       Page 5 music starts after
+       user taps OPEN.
+    */
 
-    const music =
-        document.getElementById("page5Music");
+    page5Music.currentTime = 0;
 
-    currentAudio = music;
-
-    music.currentTime=0;
-
-    music.play().catch(function(){
-
-        /* Browser autoplay fallback */
-
-    });
+    page5Music.play().catch(() => {});
 
 }
 
 
 /* =========================
-   BACK TO MEMORIES
+   BACK
 ========================= */
 
-function backToMemories(){
+function backToMemory(){
 
-    hideAllPages();
+    stopAllMusic();
 
-    document.getElementById("page4")
-        .classList.remove("hidden");
+    detailPage.style.display = "none";
+
+    page5.style.display = "none";
+
+    memoryPage.style.display = "block";
 
     window.scrollTo(0,0);
-
 }
+
+
+/* =========================
+   HANDLE AUDIO END
+========================= */
+
+birthdayMusic.addEventListener("ended",function(){
+
+    if(page3.classList.contains("active")){
+
+        const open =
+            document.getElementById("birthdayOpen");
+
+        open.style.display = "block";
+
+    }
+
+});
+
 
 </script>
 
