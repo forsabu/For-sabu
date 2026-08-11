@@ -35,9 +35,7 @@ body{
     display:flex;
 }
 
-/* =========================
-   PAGE 1
-========================= */
+/* ================= PAGE 1 ================= */
 
 #page1{
     align-items:center;
@@ -86,9 +84,7 @@ body{
     transform:scale(.96);
 }
 
-/* =========================
-   PAGE 3
-========================= */
+/* ================= PAGE 3 ================= */
 
 #page3{
     align-items:center;
@@ -165,14 +161,14 @@ body{
     animation:letterAppear .7s ease both;
 }
 
-/* =========================
-   MEMORY PAGE
-========================= */
+/* ================= MEMORY PAGE ================= */
 
 #memoryPage{
     display:none;
     min-height:100vh;
     padding:45px 18px 60px;
+
+    /* PHOTO 1-এর আগের background */
     background:
         radial-gradient(circle at 50% 10%,rgba(255,130,180,.2),transparent 30%),
         linear-gradient(135deg,#100812,#271020,#0b0a13);
@@ -234,9 +230,7 @@ body{
     cursor:pointer;
 }
 
-/* =========================
-   DETAIL PAGE
-========================= */
+/* ================= DETAIL PAGE ================= */
 
 .detail-page{
     display:none;
@@ -246,42 +240,49 @@ body{
     overflow:hidden;
 }
 
-.detail-page.photo1-bg{
+/* PHOTO 1 - আগের মতো */
+#detailPage.photo1-theme{
     background:
         radial-gradient(circle at 50% 10%,rgba(255,120,180,.25),transparent 30%),
         linear-gradient(135deg,#120812,#301226,#0b0911);
 }
 
-.detail-page.photo2-bg{
+/* PHOTO 2 - soft pink */
+#detailPage.photo2-theme{
     background:
-        radial-gradient(circle at 20% 20%,rgba(255,190,220,.4),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(255,120,180,.3),transparent 30%),
-        linear-gradient(135deg,#351021,#9a426b,#21101b);
+        radial-gradient(circle at 20% 15%,rgba(255,190,220,.55),transparent 30%),
+        radial-gradient(circle at 85% 80%,rgba(220,140,190,.35),transparent 35%),
+        linear-gradient(135deg,#351528,#7b3b60,#291323);
 }
 
-.detail-page.photo3-bg{
+/* PHOTO 3 - lavender */
+#detailPage.photo3-theme{
     background:
-        radial-gradient(circle at 70% 20%,rgba(220,190,255,.45),transparent 30%),
-        radial-gradient(circle at 20% 80%,rgba(170,130,230,.3),transparent 30%),
-        linear-gradient(135deg,#171027,#514071,#130e1e);
+        radial-gradient(circle at 75% 15%,rgba(225,190,255,.5),transparent 30%),
+        radial-gradient(circle at 15% 80%,rgba(190,145,220,.35),transparent 35%),
+        linear-gradient(135deg,#24152f,#563d68,#19121f);
 }
 
-.detail-page.photo4-bg{
+/* PHOTO 4 - blush rose */
+#detailPage.photo4-theme{
     background:
-        radial-gradient(circle at 50% 15%,rgba(255,190,205,.45),transparent 30%),
-        radial-gradient(circle at 80% 80%,rgba(255,100,160,.3),transparent 30%),
-        linear-gradient(135deg,#2b0d1c,#792f50,#160912);
+        radial-gradient(circle at 50% 10%,rgba(255,200,215,.55),transparent 30%),
+        radial-gradient(circle at 10% 85%,rgba(230,130,160,.35),transparent 35%),
+        linear-gradient(135deg,#3a1725,#713b50,#24111a);
 }
 
 .detail-container{
     max-width:850px;
     margin:auto;
     text-align:center;
+    position:relative;
+    z-index:2;
 }
 
 .detail-title{
     font-size:clamp(27px,7vw,48px);
     margin-bottom:25px;
+    text-shadow:0 0 20px rgba(255,180,210,.45);
 }
 
 .detail-image{
@@ -299,45 +300,54 @@ body{
     text-align:left;
     font-size:18px;
     line-height:1.9;
-    color:#f9eaf1;
+    color:#fff0f6;
     white-space:pre-line;
 }
 
-.back-btn,
+.next-btn,
+.memory-back-btn{
+    border:0;
+    padding:14px 32px;
+    border-radius:40px;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin:7px;
+}
+
+.next-btn{
+    background:linear-gradient(135deg,#ff5c9a,#ff9bc2);
+    box-shadow:0 0 25px rgba(255,100,170,.4);
+}
+
+.memory-back-btn{
+    background:rgba(255,255,255,.13);
+}
+
 .page5-open{
     border:0;
-    border-radius:50px;
-    color:white;
-    cursor:pointer;
-}
-
-.back-btn{
-    padding:13px 30px;
-    background:rgba(255,255,255,.13);
-    font-size:16px;
-    margin-top:10px;
-}
-
-.page5-open{
     padding:16px 45px;
+    border-radius:50px;
     background:linear-gradient(135deg,#ff4f93,#ff91bd);
+    color:white;
     font-size:20px;
     font-weight:bold;
+    cursor:pointer;
     box-shadow:0 0 28px rgba(255,80,150,.45);
-    margin-top:10px;
 }
 
-/* =========================
-   PAGE 5
-========================= */
+/* ================= PAGE 5 ================= */
 
 #page5{
+    display:none;
     min-height:100vh;
     padding:45px 20px 70px;
+
     background:
-        radial-gradient(circle at 20% 15%,rgba(255,190,220,.35),transparent 30%),
-        radial-gradient(circle at 85% 75%,rgba(220,150,210,.3),transparent 30%),
-        linear-gradient(135deg,#261021,#813d68,#190d1c);
+        radial-gradient(circle at 20% 10%,rgba(255,205,225,.5),transparent 30%),
+        radial-gradient(circle at 85% 75%,rgba(235,145,185,.4),transparent 35%),
+        linear-gradient(135deg,#3b1728,#743e5b,#24121d);
 }
 
 .final-container{
@@ -349,35 +359,22 @@ body{
     text-align:center;
     font-size:clamp(28px,7vw,50px);
     margin-bottom:35px;
-    text-shadow:0 0 20px rgba(255,150,200,.5);
+    text-shadow:0 0 20px rgba(255,180,210,.6);
 }
 
 .final-message{
     background:rgba(255,255,255,.09);
-    border:1px solid rgba(255,255,255,.18);
+    border:1px solid rgba(255,255,255,.2);
     border-radius:24px;
     padding:28px 22px;
     font-size:18px;
     line-height:2;
     white-space:pre-line;
     box-shadow:0 15px 40px rgba(0,0,0,.3);
+    backdrop-filter:blur(10px);
 }
 
-.final-back{
-    display:block;
-    width:max-content;
-    margin:30px auto 0;
-    padding:13px 30px;
-    border:0;
-    border-radius:40px;
-    background:rgba(255,255,255,.13);
-    color:white;
-    font-size:16px;
-}
-
-/* =========================
-   HEARTS
-========================= */
+/* ================= HEARTS ================= */
 
 .heart{
     position:absolute;
@@ -394,9 +391,7 @@ body{
 .h4{left:74%;animation-duration:12s;animation-delay:3s}
 .h5{left:90%;animation-duration:10s;animation-delay:1s}
 
-/* =========================
-   ANIMATIONS
-========================= */
+/* ================= ANIMATIONS ================= */
 
 @keyframes fadeIn{
     from{opacity:0;transform:translateY(20px)}
@@ -404,13 +399,25 @@ body{
 }
 
 @keyframes fadeZoom{
-    from{opacity:0;transform:scale(.85)}
-    to{opacity:1;transform:scale(1)}
+    from{
+        opacity:0;
+        transform:scale(.85);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
 }
 
 @keyframes letterAppear{
-    from{opacity:0;transform:translateY(20px)}
-    to{opacity:1;transform:translateY(0)}
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
 }
 
 @keyframes stars{
@@ -453,7 +460,7 @@ body{
 
 <body>
 
-<!-- PAGE 1 -->
+<!-- ================= PAGE 1 ================= -->
 
 <section id="page1" class="page active">
 
@@ -472,7 +479,7 @@ body{
 </section>
 
 
-<!-- PAGE 3 -->
+<!-- ================= PAGE 3 ================= -->
 
 <section id="page3" class="page">
 
@@ -496,6 +503,7 @@ body{
 
         </div>
 
+
         <div id="birthdaySecond" class="hidden-animation">
 
             <div class="returns">
@@ -505,11 +513,13 @@ body{
 
         </div>
 
+
         <div id="birthdayThird" class="hidden-animation">
 
             <div id="letterText" class="letter-text"></div>
 
         </div>
+
 
         <div id="birthdayOpen" class="hidden-animation">
 
@@ -524,7 +534,7 @@ body{
 </section>
 
 
-<!-- PAGE 4 MEMORY -->
+<!-- ================= PAGE 4 ================= -->
 
 <section id="memoryPage">
 
@@ -541,30 +551,37 @@ body{
         <div class="memory-card">
             <img src="photo1.jpg" alt="Photo 1">
             <h3>22-December-2025</h3>
+
             <button onclick="openDetail(1)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
+
         <div class="memory-card">
             <img src="photo2.jpg" alt="Photo 2">
             <h3>13-January-2026</h3>
+
             <button onclick="openDetail(2)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
+
         <div class="memory-card">
             <img src="photo3.jpg" alt="Photo 3">
             <h3>5-April-2026</h3>
+
             <button onclick="openDetail(3)">
                 VIEW MEMORY ❤️
             </button>
         </div>
 
+
         <div class="memory-card">
             <img src="photo4.jpg" alt="Photo 4">
             <h3>23-April-2026</h3>
+
             <button onclick="openDetail(4)">
                 VIEW MEMORY ❤️
             </button>
@@ -575,7 +592,7 @@ body{
 </section>
 
 
-<!-- DETAIL PAGE -->
+<!-- ================= DETAIL PAGE ================= -->
 
 <section id="detailPage" class="detail-page">
 
@@ -583,7 +600,12 @@ body{
 
         <h1 id="detailTitle" class="detail-title"></h1>
 
-        <img id="detailImage" class="detail-image" src="" alt="Memory">
+        <img
+            id="detailImage"
+            class="detail-image"
+            src=""
+            alt="Memory"
+        >
 
         <div id="detailMessage" class="detail-message"></div>
 
@@ -594,7 +616,7 @@ body{
 </section>
 
 
-<!-- PAGE 5 -->
+<!-- ================= PAGE 5 ================= -->
 
 <section id="page5">
 
@@ -618,16 +640,12 @@ body{
 অনেক অনেক ভালোবাসি তোমায়। অনেক বেশি। ❤️
         </div>
 
-        <button class="final-back" onclick="backToMemory()">
-            ← BACK TO VIEW MEMORY
-        </button>
-
     </div>
 
 </section>
 
 
-<!-- AUDIO FILES -->
+<!-- ================= AUDIO ================= -->
 
 <audio id="birthdayMusic" preload="auto">
     <source src="birthday.mp3" type="audio/mpeg">
@@ -648,25 +666,40 @@ body{
 
 <script>
 
-/* =========================
-   PAGE VARIABLES
-========================= */
+/* ================= PAGE ELEMENTS ================= */
 
-const page1 = document.getElementById("page1");
-const page3 = document.getElementById("page3");
-const memoryPage = document.getElementById("memoryPage");
-const detailPage = document.getElementById("detailPage");
-const page5 = document.getElementById("page5");
+const page1 =
+    document.getElementById("page1");
 
-const birthdayMusic = document.getElementById("birthdayMusic");
-const photo1Music = document.getElementById("photo1Music");
-const photo2Music = document.getElementById("photo2Music");
-const page5Music = document.getElementById("page5Music");
+const page3 =
+    document.getElementById("page3");
+
+const memoryPage =
+    document.getElementById("memoryPage");
+
+const detailPage =
+    document.getElementById("detailPage");
+
+const page5 =
+    document.getElementById("page5");
 
 
-/* =========================
-   HIDE ALL
-========================= */
+/* AUDIO */
+
+const birthdayMusic =
+    document.getElementById("birthdayMusic");
+
+const photo1Music =
+    document.getElementById("photo1Music");
+
+const photo2Music =
+    document.getElementById("photo2Music");
+
+const page5Music =
+    document.getElementById("page5Music");
+
+
+/* ================= HIDE ALL ================= */
 
 function hideAllPages(){
 
@@ -679,9 +712,7 @@ function hideAllPages(){
 }
 
 
-/* =========================
-   STOP ALL MUSIC
-========================= */
+/* ================= STOP MUSIC ================= */
 
 function stopAllMusic(){
 
@@ -699,9 +730,7 @@ function stopAllMusic(){
 }
 
 
-/* =========================
-   PAGE 3
-========================= */
+/* ================= PAGE 3 ================= */
 
 function goToPage3(){
 
@@ -716,15 +745,26 @@ function goToPage3(){
 
 function startBirthdayAnimation(){
 
-    const first = document.getElementById("birthdayFirst");
-    const second = document.getElementById("birthdaySecond");
-    const third = document.getElementById("birthdayThird");
-    const open = document.getElementById("birthdayOpen");
+    const first =
+        document.getElementById("birthdayFirst");
+
+    const second =
+        document.getElementById("birthdaySecond");
+
+    const third =
+        document.getElementById("birthdayThird");
+
+    const open =
+        document.getElementById("birthdayOpen");
+
 
     first.style.display = "block";
     second.style.display = "none";
     third.style.display = "none";
     open.style.display = "none";
+
+
+    /* Birthday music */
 
     birthdayMusic.currentTime = 0;
 
@@ -735,29 +775,37 @@ function startBirthdayAnimation(){
 
     setTimeout(() => {
 
-        if(!page3.classList.contains("active")) return;
+        if(!page3.classList.contains("active"))
+            return;
 
         first.style.display = "none";
 
         second.style.display = "block";
+
         second.classList.remove("fade-animation");
+
         void second.offsetWidth;
+
         second.classList.add("fade-animation");
 
     },5000);
 
 
-    /* SECOND 5 SECONDS */
+    /* NEXT 5 SECONDS */
 
     setTimeout(() => {
 
-        if(!page3.classList.contains("active")) return;
+        if(!page3.classList.contains("active"))
+            return;
 
         second.style.display = "none";
 
         third.style.display = "block";
+
         third.classList.remove("letter-animation");
+
         void third.offsetWidth;
+
         third.classList.add("letter-animation");
 
         typeLetter();
@@ -765,14 +813,14 @@ function startBirthdayAnimation(){
     },10000);
 
 
+    /* Music শেষ হলে OPEN */
+
     birthdayMusic.onended = function(){
 
         if(page3.classList.contains("active")){
 
             open.style.display = "block";
 
-            open.classList.remove("fade-animation");
-            void open.offsetWidth;
             open.classList.add("fade-animation");
 
         }
@@ -782,49 +830,39 @@ function startBirthdayAnimation(){
 }
 
 
-/* =========================
-   LETTER BY LETTER
-========================= */
+/* ================= LETTER ================= */
 
 function typeLetter(){
 
     const text =
-    "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
+        "তোমার জন্য সুন্দর কিছু মুহূর্ত অপেক্ষা করছে। ❤️";
 
     const element =
-    document.getElementById("letterText");
+        document.getElementById("letterText");
 
     element.textContent = "";
 
     let index = 0;
 
-    const timer = setInterval(() => {
+    const timer =
+        setInterval(() => {
 
-        if(!page3.classList.contains("active")){
+            element.textContent +=
+                text.charAt(index);
 
-            clearInterval(timer);
-            return;
+            index++;
 
-        }
+            if(index >= text.length){
 
-        element.textContent += text.charAt(index);
+                clearInterval(timer);
 
-        index++;
+            }
 
-        if(index >= text.length){
-
-            clearInterval(timer);
-
-        }
-
-    },110);
-
+        },110);
 }
 
 
-/* =========================
-   MEMORY PAGE
-========================= */
+/* ================= MEMORY PAGE ================= */
 
 function openMemoryPage(){
 
@@ -838,9 +876,7 @@ function openMemoryPage(){
 }
 
 
-/* =========================
-   MEMORY DATA
-========================= */
+/* ================= MEMORY DATA ================= */
 
 const memories = {
 
@@ -952,38 +988,44 @@ Ar amar kotha gulo kane newar dorkar tai ki? Kaner bahire rakho kichu somoyer jo
 };
 
 
-/* =========================
-   OPEN DETAIL
-========================= */
+/* ================= OPEN DETAIL ================= */
 
 function openDetail(number){
 
-    const memory = memories[number];
+    const memory =
+        memories[number];
+
+    stopAllMusic();
 
     memoryPage.style.display = "none";
+
     detailPage.style.display = "block";
 
 
-    /* DIFFERENT BACKGROUND */
+    /* আলাদা theme */
 
     detailPage.classList.remove(
-        "photo1-bg",
-        "photo2-bg",
-        "photo3-bg",
-        "photo4-bg"
+        "photo1-theme",
+        "photo2-theme",
+        "photo3-theme",
+        "photo4-theme"
     );
 
-    detailPage.classList.add("photo" + number + "-bg");
+    detailPage.classList.add(
+        "photo" + number + "-theme"
+    );
 
 
-    document.getElementById("detailTitle").textContent =
-        memory.title;
+    document.getElementById("detailTitle")
+        .textContent = memory.title;
 
-    document.getElementById("detailImage").src =
-        memory.image;
 
-    document.getElementById("detailMessage").textContent =
-        memory.message;
+    document.getElementById("detailImage")
+        .src = memory.image;
+
+
+    document.getElementById("detailMessage")
+        .textContent = memory.message;
 
 
     const buttonArea =
@@ -991,10 +1033,10 @@ function openDetail(number){
 
     buttonArea.innerHTML = "";
 
-    stopAllMusic();
 
-
-    /* PHOTO 1 MUSIC */
+    /* =================
+       PHOTO 1 / 2 MUSIC
+    ================= */
 
     if(number === 1){
 
@@ -1005,8 +1047,6 @@ function openDetail(number){
     }
 
 
-    /* PHOTO 2 MUSIC */
-
     if(number === 2){
 
         photo2Music.currentTime = 0;
@@ -1016,103 +1056,110 @@ function openDetail(number){
     }
 
 
-    /* PHOTO 1 → PHOTO 2 */
+    /* =================
+       PHOTO 1 → PHOTO 2
+    ================= */
 
     if(number === 1){
 
-        const nextButton =
-            document.createElement("button");
-
-        nextButton.className = "page5-open";
-
-        nextButton.textContent = "NEXT ❤️";
-
-        nextButton.onclick = function(){
-
-            stopAllMusic();
-            openDetail(2);
-
-        };
-
-        buttonArea.appendChild(nextButton);
+        createNextButton(
+            "NEXT ❤️",
+            function(){
+                openDetail(2);
+            }
+        );
 
     }
 
 
-    /* PHOTO 2 → PHOTO 3 */
+    /* =================
+       PHOTO 2 → PHOTO 3
+    ================= */
 
-    else if(number === 2){
+    if(number === 2){
 
-        const nextButton =
-            document.createElement("button");
-
-        nextButton.className = "page5-open";
-
-        nextButton.textContent = "NEXT ❤️";
-
-        nextButton.onclick = function(){
-
-            stopAllMusic();
-            openDetail(3);
-
-        };
-
-        buttonArea.appendChild(nextButton);
+        createNextButton(
+            "NEXT ❤️",
+            function(){
+                openDetail(3);
+            }
+        );
 
     }
 
 
-    /* PHOTO 3 → PHOTO 4 */
+    /* =================
+       PHOTO 3 → PHOTO 4
+    ================= */
 
-    else if(number === 3){
+    if(number === 3){
 
-        const nextButton =
-            document.createElement("button");
-
-        nextButton.className = "page5-open";
-
-        nextButton.textContent = "NEXT ❤️";
-
-        nextButton.onclick = function(){
-
-            stopAllMusic();
-            openDetail(4);
-
-        };
-
-        buttonArea.appendChild(nextButton);
+        createNextButton(
+            "NEXT ❤️",
+            function(){
+                openDetail(4);
+            }
+        );
 
     }
 
 
-    /* PHOTO 4 → PAGE 5 */
+    /* =================
+       PHOTO 4 → PAGE 5
+    ================= */
 
-    else if(number === 4){
+    if(number === 4){
 
         const openButton =
             document.createElement("button");
 
-        openButton.className = "page5-open";
+        openButton.className =
+            "page5-open";
 
-        openButton.textContent = "OPEN ❤️";
+        openButton.textContent =
+            "OPEN ❤️";
 
-        openButton.onclick = function(){
+        openButton.onclick =
+            function(){
 
-            openPage5();
+                openPage5();
 
-        };
+            };
 
-        buttonArea.appendChild(openButton);
+        buttonArea.appendChild(
+            openButton
+        );
 
     }
+
 
     window.scrollTo(0,0);
 }
 
 
-/* =========================
-   PAGE 5
-========================= */
+/* ================= NEXT BUTTON ================= */
+
+function createNextButton(text,action){
+
+    const button =
+        document.createElement("button");
+
+    button.className =
+        "next-btn";
+
+    button.textContent =
+        text;
+
+    button.onclick =
+        action;
+
+    document.getElementById(
+        "detailButtonArea"
+    ).appendChild(button);
+}
+
+
+/* ================= PAGE 5 ================= */
 
 function openPage5(){
 
@@ -1124,28 +1171,13 @@ function openPage5(){
 
     window.scrollTo(0,0);
 
+
+    /* Page 5 music */
+
     page5Music.currentTime = 0;
 
     page5Music.play().catch(() => {});
 
-}
-
-
-/* =========================
-   BACK TO MEMORY
-========================= */
-
-function backToMemory(){
-
-    stopAllMusic();
-
-    detailPage.style.display = "none";
-
-    page5.style.display = "none";
-
-    memoryPage.style.display = "block";
-
-    window.scrollTo(0,0);
 }
 
 </script>
